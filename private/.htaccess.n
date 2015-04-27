@@ -1,0 +1,3 @@
+AuthType Basic
+AuthName "all things considered - private"
+require user peterda

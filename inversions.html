@@ -1,0 +1,588 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="scattering sensitivity, sensitivity kernels, 
+			surface waves, global tomography, Born approximation, membrane waves, 
+			finite-frequency effects" />
+  <meta name="description" content="personal webpage of daniel peter dedicated to 
+			seismology and global tomography" />
+  <meta name="title" content="daniel peter - Department of Geosciences" />
+  <link href="default.css" rel="stylesheet" type="text/css" />
+  <title>daniel peter - Department of Geosciences</title>
+
+
+</head>
+
+<body>
+
+<div id="header"><!-- header -->
+<div class="img6">
+</div></div>
+
+<div id="wrapper"><!-- wrapper pager -->
+<div class="pathline"><!-- START path -->
+<a class="path" href="http://www.princeton.edu/">Princeton University </a>
+- <a class="path" href="http://geoweb.princeton.edu/">Department of Geosciences </a>
+- <a class="path" href="http://www.princeton.edu/~dpeter">Daniel Peter</a>
+&nbsp;</div><!-- END path -->
+
+<div id="content">
+<div class="post">
+<h1 class="title"><span>inversions</span></h1>
+<p>
+
+<h2>checkerboard tests</h2>
+
+The tests were using synthetic datasets calculated with the membrane model. For different checkerboards (background phase velocity maps using spherical harmonics with different angular degrees L and M) the synthetic datum
+was obtained by crosscorrelating the synthetic seismogram with a reference trace calculated for a homogeneous background Earth.
+<br>
+<br>
+
+The datasets use the same source-station setups as the ETL97 database for Love waves at 150 s period 
+(and minor arcs only). They contain 16'624 measurements. The following image shows the number of great-circle rays
+which pass through each single pixel of the inversion grid, thus dark regions have a high data coverage. 
+<br>
+<br>
+<img src="pubs/L0150_hits_jwkb.jpg" border="0" alt="ray hit count" width="100%">
+
+<br>
+<br>
+
+For the inversions, either ray-theory/great-circle approximation (JWKB) or numerical Born kernels (BORN) were used 
+to find a solution by a least-squares routine. I changed only the roughness damping coefficient (no norm-damping is applied) between a range of 0 to 10. The inversions were applied on a pixel-grid with approximately 3x3 degree pixels
+around the equator, thus inverting for 4592 model parameters. 
+
+<br>
+<br>
+<br>
+<br>
+
+
+<h1 class="title">L9M5 - input model</h1>
+
+<img src="pubs/PhaseMap.L09-M05.jpg" border="0" alt="L9M5 checkerboard">
+
+<br>
+<br>
+
+<table>
+<tr>
+<td>
+
+<b>L9M5 - maps - JWKB</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/L9M5.jwkb.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/L9M5.jwkb.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+<td>
+
+<b>L9M5 - maps - BORN</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/L9M5.born.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/L9M5.born.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+</tr>
+</table>
+
+
+<br>
+<br>
+
+<h1 class="title">L9M5 - 10 percent input model</h1>
+This checkerboard uses the same spherical harmonics L=9 and M=5 as in the first example but with 10% perturbation amplitudes instead.
+
+<img src="pubs/PhaseMap.L09-M05.10percent.jpg" border="0" alt="L13M7 checkerboard">
+<br>
+<br>
+
+<table>
+<tr>
+<td>
+
+<b>L9M5 - 10 percent maps - JWKB</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/L9M5.10percent-jwkb.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/L9M5.10percent-jwkb.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+<td>
+
+<b>L9M5 - 10 percent maps - BORN</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/L9M5.10percent-born.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/L9M5.10percent-born.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<table>
+<tr>
+<td>
+
+<b>L9M5 - 10 percent starting model - 1. iteration </b>
+<br>
+<br>
+
+I took this solution from the BORN inversion from above and calculated all the Born kernels again. Then rerun the inversion with different damping coefficients.
+<img src="pubs/L0150.born.3.lsqr-0.-0.400.jpg" border="0" alt="L20M10">
+
+
+
+</td>
+<td>
+
+<b>L9M5 - 10 percent maps - 1. iteration BORN </b>
+<br>
+<br>
+<br>
+<br>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/L9M5.10percent-1st-iteration.born.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/L9M5.10percent-1st-iteration.born.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+<table>
+<tr>
+<td>
+
+<b>L9M5 - 10 percent starting model - 2. iteration </b>
+<br>
+<br>
+
+Starting with this model from the 1. iteration, recalculating the Born kernels and inverting the synthetics is shown here.
+<img src="pubs/L9M5.10percent-0.800.jpg" border="0" alt="L9M5">
+
+
+</td>
+<td>
+
+<b>L9M5 - 10 percent maps - 2. iteration BORN </b>
+<br>
+<br>
+<br>
+<br>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/L9M5.10percent-2ndmodel800.born.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/L9M5.10percent-2ndmodel800.born.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+
+<h1 class="title">L13M7 - input model</h1>
+
+<img src="pubs/PhaseMap.L13-M07.jpg" border="0" alt="L13M7 checkerboard">
+<br>
+<br>
+
+<table>
+<tr>
+<td>
+
+<b>L13M7 - maps - JWKB</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/L13M7.jwkb.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/L13M7.jwkb.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+<td>
+
+<b>L13M7 - maps - BORN</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/L13M7.born.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/L13M7.born.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+
+
+<h1 class="title">L20M10 - input model</h1>
+
+<img src="pubs/PhaseMap.L20-M10.jpg" border="0" alt="L20M10 checkerboard">
+
+<br>
+<br>
+
+<table>
+<tr>
+<td>
+
+<b>L20M10 - maps - JWKB</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/L20M10.jwkb.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/L20M10.jwkb.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+<td>
+
+<b>L20M10 - maps - BORN</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/L20M10.born.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/L20M10.born.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+
+<table>
+<tr>
+<td>
+
+<b>L20M10 - starting model - 1. iteration </b>
+<br>
+<br>
+
+I took this solution from the BORN inversion from above and calculated all the Born kernels again. Then rerun the inversion with different damping coefficients.
+<img src="pubs/L0150.born.3.lsqr-0.-0.200.jpg" border="0" alt="L20M10">
+
+
+
+</td>
+<td>
+
+<b>L20M10 - maps - 1. iteration BORN </b>
+<br>
+<br>
+<br>
+<br>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/L20M10.1st-iteration.born.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/L20M10.1st-iteration.born.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+
+</td>
+</tr>
+</table>
+
+
+
+<table>
+<tr>
+<td>
+
+<b>L20M10 - starting model - 2. iteration </b>
+<br>
+<br>
+
+This time I took this solution from the 1.iteration results. Again, recalculated the Born kernels and rerun 
+the inversions with different damping coefficients.
+<img src="pubs/L0150.born.3.lsqr-0.-0.100.jpg" border="0" alt="L20M10">
+
+
+</td>
+<td>
+<b>L20M10 - maps - 2. iteration BORN</b>
+<br>
+<br>
+<br>
+<br>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/L20M10.2nd-iteration.born.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/L20M10.2nd-iteration.born.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+
+
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<h1 class="title">TW 95 - input model</h1>
+
+In this test, I take the phase-velocity map from Trampert & Woodhouse 1995 for Love waves at 150 s as the (background) input model and calculate the synthetic datum by cross-correlating the waveforms obtained numerically by the membrane model. 
+<br>
+<br>
+My source/station distribution is equal to the ETL97 distribution for Love wave at 150 s. Thus, instead of the 23'803 minor arc couples which Trampert & Woodhouse used to derive the map, I only take 16'624 couples. The locations of sources and stations may differ therefore a bit. 
+
+The following figure shows the ray paths for the Trampert & Woodhouse source/station distribution.
+<img src="pubs/TW96.source-receivers.jpg" border="0" alt="TW96 sources" width="100%">
+<br>
+And this is the same figure for the distribution taken from the ETL97 dataset.<br>
+<img src="pubs/ETL97.source-receivers.jpg" border="0" alt="ETL97 sources" width="100%">
+
+
+The inversions should reveal this TW95 input model:
+<img src="pubs/TW95.jpg" border="0" alt="L20M10 checkerboard">
+<br>
+<br>
+
+
+<br>
+<br>
+
+<table>
+<tr>
+<td>
+
+<b>TW95 - maps - JWKB</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/TW95.jwkb.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/TW95.jwkb.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+<td>
+
+<b>TW95 - maps - BORN</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/TW95.born.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/TW95.born.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<table>
+<tr>
+<td>
+<b>TW95 - spectra - JWKB</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/TW95.spectra.jwkb.mov" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/TW95.spectra.jwkb.mov" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+<td>
+
+<b>TW95 - spectra - BORN</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/TW95.spectra.born.mov" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/TW95.spectra.born.mov" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+
+
+<h1 class="title">TW 96 - input model</h1>
+
+<img src="pubs/TW96.jpg" border="0" alt="L20M10 checkerboard">
+<br>
+<br>
+
+
+<br>
+<br>
+
+<table>
+<tr>
+<td>
+
+<b>TW96 - maps - JWKB</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/TW96.jwkb.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/TW96.jwkb.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+<td>
+
+<b>TW96 - maps - BORN</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/TW96.born.mpg" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/TW96.born.mpg" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<table>
+<tr>
+<td>
+<b>TW96 - spectra - JWKB</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/TW96.spectra.jwkb.mov" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/TW96.spectra.jwkb.mov" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+<td>
+
+<b>TW96 - spectra - BORN</b>
+
+<OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" WIDTH="440"HEIGHT="300"
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab">
+<PARAM name="SRC" VALUE="pubs/TW96.spectra.born.mov" >
+<PARAM name="AUTOPLAY" VALUE="true">
+<PARAM name="CONTROLLER" VALUE="true">
+<EMBED SRC="pubs/TW96.spectra.born.mov" WIDTH="444" HEIGHT="300" AUTOPLAY="false" CONTROLLER="true" PLUGINSPAGE="http://www.apple.com/quicktime/download/">
+</EMBED>
+</OBJECT>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+
+
+
+</p>
+
+</div></div><!-- end #content -->
+
+</div><!-- wrapper pager -->
+
+
+<div style="clear: both;">&nbsp;</div>
+<div id="footer">
+<p id="legal">&copy; July 2008</p>
+<p id="links"><a href="http://geoweb.princeton.edu">Department of Geosciences</a>
+| <a href="http://www.princeton.edu">Princeton University</a></p>
+
+</div> <!-- end #footer -->
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=865844; var sc_partition=3; var sc_security="d4b9590a"; var sc_invisible=1; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript>
+<a href="http://www.statcounter.com/"
+target="_blank"><img
+src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
+alt="web site hit counter" border="0"></a> 
+</noscript>
+<!-- End of StatCounter Code -->
+
+<!-- Start of google analytics Code -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2106342-1";
+urchinTracker();
+</script>
+<!-- End of google analytics -->
+
+</body>
+</html>

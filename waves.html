@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+
+  <meta name="keywords" content="scattering sensitivity, sensitivity kernels,
+			surface waves, global tomography, Born approximation, membrane waves,
+			finite-frequency effects, computational seismology, Frechet derivatives, seismic tomography" />
+
+  <meta name="verify-v1" content="2eJEXClAA+iCOCcU4YYlWQYcAaSoQDK+PM/9detmgEE=" />
+  <meta name="description" content="personal webpage of daniel peter dedicated to
+			seismology and global tomography" />
+  <meta name="title" content="daniel peter - Institute of Geophysics" />
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway|Exo+2|Lato">
+  <link href="default.css" rel="stylesheet" type="text/css" />
+
+  <title>daniel peter - Institute of Geophysics</title>
+
+  <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" language="JavaScript" type="text/javascript"></script>
+  <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" language="JavaScript" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<div id="header"><!-- header -->
+<div class="img4">
+</div></div>
+
+<div id="wrapper"><!-- wrapper pager -->
+<div class="pathline"><!-- START path -->
+<a class="path" href="http://www.ethz.ch/">ETH Zurich </a>
+- <a class="path" href="http://www.geophys.ethz.ch/">Institute of Geophysics</a>
+- <a class="path" href="http://www.seg.ethz.ch">Seismology and Geodynamics</a>
+- <a class="path" href="http://n.ethz.ch/~peterda/">Daniel Peter</a>
+&nbsp;</div><!-- END path -->
+
+<div id="sidebar">
+<div class="box">
+<ul>
+  <li class="first"><a href="index.html">Home</a></li>
+  <li>
+    <a href="research.html">Research:</a>
+    <br>
+    <br>
+  <ul>
+  <font color="#666666">Wave propagation</font><br>
+    <a href="3dwaves.html">3D seismic waves</a><br>
+    <a href="grids.html">Spherical Grids</a><br>
+    <a href="waves.html">Membrane waves</a><br>
+    <a href="rays.html">Ray tracing</a><br>
+    <br>
+  <font color="#666666">Inverse problems</font><br>
+    <a href="3dsensitivity.html">3D Sensitivity kernels</a><br>
+    <a href="sensitivity.html">Phase-velocity Sensitivity kernels</a><br>
+    <a href="mediterranean.html">Mediterranean Tomography</a><br>
+  </ul>
+  </li>
+  <li><a href="publications.html">Publications</a></li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+</div></div> <!-- end #sidebar -->
+
+<div id="content">
+<div class="post">
+<h1 class="title"><span>Membrane wave propagation</span></h1>
+<p>
+In fact, membrane waves were first introduced by Tanimoto (1990).
+He shows that they are an analogue for surface waves, either Love or Rayleigh waves,
+when we restrict ourselves to a narrow frequency band.
+Here we look at waves on a sphere at their simplest form of propagation. That means there is <b>no
+dispersion</b>. And <b>no attenuation</b>.
+And well, <b>no anisotropy</b>. I'm sorry to show this formula now, but I just have to (only a tiny one).<br>
+
+<br>
+
+<img src="./images/waveequation.gif" alt="wave equation" border="0" width="100%"> <br>
+
+<br>
+This is all there is to solve. The phase velocity <i>c</i> depends only on the
+location on the sphere, the displacement <i>u</i> of course also in time <i>t</i> and so
+does the forcing term <i>f</i> (which we set to a really boring one). <br>
+
+<br>
+So what? Call it a toy model. Realistic? No. Unless you consider a
+slightly more realistic approach. What I mean by that, is that we can
+put a phase velocity map on
+our sphere. <br>
+
+<br clear="all">
+</p>
+
+
+
+<h2 class="title"><span>phase velocity maps</span></h2>
+<p>
+
+<img src="./images/phasemap_6L35.gif" alt="love wave 35s phase velocity map" align="right" border="0"><br>
+
+
+These maps can be obtained for either <b>Love or Rayleigh waves</b>
+and at certain distinct frequencies. The map here is derived by crustal
+informations (rather than by inversion of phase anomalies) for Love
+waves at a frequency of about 35 seconds. They have an area resolution
+of 2&ordm;x2&ordm; degree (you just ask <a href="http://www.sg.geophys.ethz.ch/geodynamics/lapo/index.html" target="_blank">Lapo</a> for it. He's doing these and other great inversion maps).
+<br>
+<br clear="all">
+</p>
+
+
+<h2 class="title"><span>heterogeneity</span></h2>
+<p>
+<img src="./images/seismo_north.jpg" align="left" alt="phase velocity map"><br>
+Now let us propagate the model waves on that. Dispersion isn't anymore
+an option, since we're only looking at a predefined wave frequency. But
+we can compare <b>effects of heterogeneity</b> with the homogeneous one (and draw some nice pictures as well).<br>
+
+
+<br>
+<br clear="all">
+<br>
+<br>
+</p>
+
+
+
+<h3 class="title"><span>Movie</span></h3>
+<p>
+
+A simulation of membrane waves propagating away from an artificial earthquake source located in
+Crete, Greece. The simulation spans over the whole globe. The membrane waves hit a
+strong slow-velocity scatterer at the Himalayan region. The simulation ends after the waves
+reach again the source region.
+<br>
+<br>
+<script type="text/javascript"><!--
+	QT_WritePoster_XHTML('Click to Play', 'packages/simulation2-poster.jpg',
+		'packages/creta-membrane-waves.mov',
+		'480', '496', '',
+		'controller', 'true',
+		'autoplay', 'true',
+		'bgcolor', 'black',
+		'scale', 'aspect');
+//-->
+</script>
+<noscript>
+<object width="480" height="496" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+	<param name="src" value="packages/simulation2-poster.jpg" />
+	<param name="href" value="packages/creta-membrane-waves.mov" />
+	<param name="target" value="myself" />
+	<param name="controller" value="false" />
+	<param name="autoplay" value="false" />
+	<param name="scale" value="aspect" />
+	<embed width="480" height="496" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"
+		src="packages/simulation2-poster.jpg"
+		href="packages/creta-membrane-waves.mov"
+		target="myself"
+		controller="false"
+		autoplay="false"
+		scale="aspect">
+	</embed>
+</object>
+</noscript>
+
+
+
+
+<br clear="all">
+<br>
+<br>
+</p>
+
+
+
+
+
+
+
+
+
+
+<h3 class="title"><span>references:</span></h3>
+<p>
+
+<b>Peter, D.</b>, C. Tape, L. Boschi and J. H. Woodhouse, 2007.
+<a href="http://www3.interscience.wiley.com/journal/118543453/abstract">
+Surface wave tomography: global membrane waves and adjoint methods
+</a>, <i>Geophys. J. Int.</i>,
+171, 1098 - 1117.
+<br>
+<br>
+
+Tanimoto, T., 1990. Modelling curved surface wave paths: membrane surface wave synthetics, <i>Geophys. J.
+Int.</i>, <b>102</b>, 89-100.
+
+</p>
+
+</div></div><!-- end #content -->
+
+<div id="contactbar">
+<div class="box">
+<ul>
+<h3>software repositories:</h3>
+<a href="http://www.spice-rtn.org/library/software.1.html">SPICE</a>
+<br>
+<br>
+<a href="http://www.geodynamics.org/">CIG</a>
+<br>
+<br>
+<h3>download:</h3>
+<a href="./packages/membraneSphere-1.0.zip">membraneSphere-1.0.zip</a>
+<br>
+<br>
+<li></li>
+</ul>
+</div></div> <!-- end #contactbar -->
+</div><!-- wrapper pager -->
+
+<div style="clear: both;">&nbsp;</div>
+<div id="footer">
+<p id="legal">&copy; October 2014</p>
+<p id="links"><a href="http://www.geophys.ethz.ch/">Institute of Geophysics</a>
+| <a href="http://www.ethz.ch/">ETH Zurich </a></p>
+
+</div> <!-- end #footer -->
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=865844; var sc_partition=3; var sc_security="d4b9590a"; var sc_invisible=1; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript>
+<a href="http://www.statcounter.com/"
+target="_blank"><img
+src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
+alt="web site hit counter" border="0"></a>
+</noscript>
+<!-- End of StatCounter Code -->
+
+<!-- Start of google analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-2106342-4', 'ethz.ch');
+  ga('send', 'pageview');
+</script>
+<!-- End of google analytics -->
+
+</body>
+</html>

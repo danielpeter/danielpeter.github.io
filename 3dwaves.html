@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+
+  <meta name="keywords" content="scattering sensitivity, sensitivity kernels,
+			surface waves, global tomography, Born approximation, membrane waves,
+			finite-frequency effects, computational seismology, Frechet derivatives, seismic tomography" />
+
+  <meta name="verify-v1" content="2eJEXClAA+iCOCcU4YYlWQYcAaSoQDK+PM/9detmgEE=" />
+  <meta name="description" content="personal webpage of daniel peter dedicated to
+			seismology and global tomography" />
+  <meta name="title" content="daniel peter - Institute of Geophysics" />
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway|Exo+2|Lato">
+  <link href="default.css" rel="stylesheet" type="text/css" />
+
+  <title>daniel peter - Institute of Geophysics</title>
+
+  <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" language="JavaScript" type="text/javascript"></script>
+  <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" language="JavaScript" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<div id="header"><!-- header -->
+<div class="img6">
+</div></div>
+
+<div id="wrapper"><!-- wrapper pager -->
+<div class="pathline"><!-- START path -->
+<a class="path" href="http://www.ethz.ch/">ETH Zurich </a>
+- <a class="path" href="http://www.geophys.ethz.ch/">Institute of Geophysics</a>
+- <a class="path" href="http://www.seg.ethz.ch">Seismology and Geodynamics</a>
+- <a class="path" href="http://n.ethz.ch/~peterda/">Daniel Peter</a>
+&nbsp;</div><!-- END path -->
+
+<div id="sidebar">
+<div class="box">
+<ul>
+  <li class="first"><a href="index.html">Home</a></li>
+  <li>
+    <a href="research.html">Research:</a>
+    <br>
+    <br>
+  <ul>
+  <font color="#666666">Wave propagation</font><br>
+    <a href="3dwaves.html">3D seismic waves</a><br>
+    <a href="grids.html">Spherical Grids</a><br>
+    <a href="waves.html">Membrane waves</a><br>
+    <a href="rays.html">Ray tracing</a><br>
+    <br>
+  <font color="#666666">Inverse problems</font><br>
+    <a href="3dsensitivity.html">3D Sensitivity kernels</a><br>
+    <a href="sensitivity.html">Phase-velocity Sensitivity kernels</a><br>
+    <a href="mediterranean.html">Mediterranean Tomography</a><br>
+  </ul>
+  </li>
+  <li><a href="publications.html">Publications</a></li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+</div></div> <!-- end #sidebar -->
+
+<div id="content">
+<div class="post">
+<h1 class="title"><span>3D wave propagation</span></h1>
+<p>
+<img src="./images/model_specfem3d_globe.jpg" alt="SPECFEM3D_GLOBE mesh" border="0" width="100%" align="right"> <br>
+Simulating seismic wave propagation in 3D is quite a challenge, especially
+in complex geological settings. To make things easier from a numerical
+perspective, I helped enhancing the global scale package
+<a class="link" href="http://www.geodynamics.org/cig/software/specfem3d_globe">SPECFEM3D_GLOBE "Tiger" </a>
+and also helped implementing a more flexible local scale package
+<a class="link" href="http://www.geodynamics.org/cig/software/specfem3d">SPECFEM3D "Sesame" </a>
+of the already excellent basin package. The new "Sesame" version is more flexible
+when it comes to meshing your model. It also handles acoustic and elastic
+materials. And if you want to mix them together, it automatically takes
+the coupling between acoustic and elastic waves into account.
+
+
+
+As an illustration case, the movie below shows this coupling in a daily
+life example.
+
+<br>
+<br clear="all">
+<br>
+<br>
+</p>
+
+
+
+<h3 class="title"><span>Movie</span></h3>
+<p>
+
+A simulation of acoustic and elastic waves traveling through a coffee cup.
+The source is inside the fluid, i.e. the coffee, and a simplest acoustic pressure source.
+Acoustic waves couple at the cup's surface with the elastic part of the cup
+and continue propagating as elastic waves. The interesting fact here is that
+for local to regional scale simulations of seismic waves propagating through Earth,
+we use exactly the same physical principles.<br>
+<br>
+<script type="text/javascript"><!--
+	QT_WritePoster_XHTML('Click to Play', 'images/coffeecup-poster.jpg',
+		'images/coffeecup.mpg',
+		'480', '496', '',
+		'controller', 'true',
+		'autoplay', 'true',
+		'bgcolor', 'black',
+		'scale', 'aspect');
+//-->
+</script>
+<noscript>
+<object width="480" height="496" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+	<param name="src" value="images/coffeecup-poster.jpg" />
+	<param name="href" value="images/coffeecup.mpg" />
+	<param name="target" value="myself" />
+	<param name="controller" value="false" />
+	<param name="autoplay" value="false" />
+	<param name="scale" value="aspect" />
+	<embed width="480" height="496" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"
+		src="images/coffeecup-poster.jpg"
+		href="images/coffeecup.mpg"
+		target="myself"
+		controller="false"
+		autoplay="false"
+		scale="aspect">
+	</embed>
+</object>
+</noscript>
+
+
+<br clear="all">
+<br>
+<br>
+</p>
+
+
+<h3 class="title"><span>references:</span></h3>
+<p>
+<b>Peter, D.</b>,D. Komatitsch, Y. Luo, R. Martin, N. Le Goff, E. Casarotti, 
+P. Le Loher,  F. Magnoni, Q. Liu, C. Blitz, T. Nissen-Meyer, P. Basini and J. Tromp, 2011.
+<a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1365-246X.2011.05044.x/abstract">
+Forward and adjoint simulations of seismic wave propagation on fully unstructured hexahedral meshes
+</a>,
+<i>Geophys. J. Int.</i>, 
+186 (2), 721-739.
+</p>
+
+</div></div><!-- end #content -->
+
+<div id="contactbar">
+<div class="box">
+<ul>
+<h3>software repositories:</h3>
+<a href="http://www.geodynamics.org/">CIG</a>
+<br>
+<br>
+<li></li>
+</ul>
+</div></div> <!-- end #contactbar -->
+</div><!-- wrapper pager -->
+
+<div style="clear: both;">&nbsp;</div>
+<div id="footer">
+<p id="legal">&copy; October 2014</p>
+<p id="links"><a href="http://www.geophys.ethz.ch/">Institute of Geophysics</a>
+| <a href="http://www.ethz.ch/">ETH Zurich </a></p>
+
+</div> <!-- end #footer -->
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=865844; var sc_partition=3; var sc_security="d4b9590a"; var sc_invisible=1; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript>
+<a href="http://www.statcounter.com/"
+target="_blank"><img
+src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
+alt="web site hit counter" border="0"></a>
+</noscript>
+<!-- End of StatCounter Code -->
+
+<!-- Start of google analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-2106342-4', 'ethz.ch');
+  ga('send', 'pageview');
+</script>
+<!-- End of google analytics -->
+
+</body>
+</html>

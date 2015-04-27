@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+
+  <meta name="keywords" content="scattering sensitivity, sensitivity kernels,
+			surface waves, global tomography, Born approximation, membrane waves,
+			finite-frequency effects, computational seismology, Frechet derivatives, seismic tomography" />
+
+  <meta name="verify-v1" content="2eJEXClAA+iCOCcU4YYlWQYcAaSoQDK+PM/9detmgEE=" />
+  <meta name="description" content="personal webpage of daniel peter dedicated to
+			seismology and global tomography" />
+  <meta name="title" content="daniel peter - Institute of Geophysics" />
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway|Exo+2|Lato">
+  <link href="default.css" rel="stylesheet" type="text/css" />
+
+  <title>daniel peter - Institute of Geophysics</title>
+
+  <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" language="JavaScript" type="text/javascript"></script>
+  <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" language="JavaScript" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<div id="header"><!-- header -->
+<div class="img5">
+</div></div>
+
+<div id="wrapper"><!-- wrapper pager -->
+<div class="pathline"><!-- START path -->
+<a class="path" href="http://www.ethz.ch/">ETH Zurich </a>
+- <a class="path" href="http://www.geophys.ethz.ch/">Institute of Geophysics</a>
+- <a class="path" href="http://www.seg.ethz.ch">Seismology and Geodynamics</a>
+- <a class="path" href="http://n.ethz.ch/~peterda/">Daniel Peter</a>
+&nbsp;</div><!-- END path -->
+
+<div id="sidebar">
+<div class="box">
+<ul>
+  <li class="first"><a href="index.html">Home</a></li>
+  <li>
+    <a href="research.html">Research:</a>
+    <br>
+    <br>
+  <ul>
+  <font color="#666666">Wave propagation</font><br>
+    <a href="3dwaves.html">3D seismic waves</a><br>
+    <a href="grids.html">Spherical Grids</a><br>
+    <a href="waves.html">Membrane waves</a><br>
+    <a href="rays.html">Ray tracing</a><br>
+    <br>
+  <font color="#666666">Inverse problems</font><br>
+    <a href="3dsensitivity.html">3D Sensitivity kernels</a><br>
+    <a href="sensitivity.html">Phase-velocity Sensitivity kernels</a><br>
+    <a href="mediterranean.html">Mediterranean Tomography</a><br>
+  </ul>
+  </li>
+  <li><a href="publications.html">Publications</a></li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+</div></div> <!-- end #sidebar -->
+
+<div id="content">
+<div class="post">
+<h1 class="title"><span>Surface wave scattering</span></h1>
+
+<img style="width: 315px; height: 251px;" src="./images/simulation.gif" align="right" border="0" alt="scatterer simulation">
+
+To studying surface wave scattering, the <b>membrane wave</b> approach becomes
+very handy. For these investigations we created some weird phase velocity maps:
+everything will be homogeneous unless a tiny small area with a very low
+phase velocity. Let us call these maps our 'delta phase velocity maps'
+(in fact these aren't created by delta functions rather by some sort of
+plateau function). This here is a wave propagating over such a delta
+area. The wave comes from the source on the left, hits the scatterer
+in the middle and propagates further right.
+As you can see, the delta location will be a scatterer.<br>
+<br>
+<br>
+<br>
+<br>
+
+<h2 class="title"><span>scattering sensitivity</span></h2>
+
+Seismic waves propagating through the Earth are sensitive to the structures they
+travel through. For surface wave tomography, these different structures
+(may it come from temperature or compositional differences) can
+be described in terms of phase velocity changes. But how strong is a
+surface wave scattered due to these phase changes? <br>
+
+<br>
+<img style="width: 204px; height: 207px; float: right;" alt="analytical kernel for Love waves 150 s" src="./images/image_kernelanalyticL150.jpg"><br>
+
+A way to figure out the scattering sensitivity is by using a <b>Born
+approximation</b>. In general, that is valid only for small perturbations
+in phase velocity. Still, for surface waves this is a fairly good
+assumption. So, let's imagine an earthquake happens on the equator west
+to the African coast and we sit on an island in the Indian ocean and
+register the surface waves. This is kind of our basic setup of seismic
+source and receiver station, just because it's easier to plot them on a
+map. The image beside shows you, how <b>sensitive</b> a Love wave
+at a wave period of 150 s would be to a small phase velocity anomaly:
+if this anomaly is positive, thus speeding up the Love wave, and lies
+in a green (or blue and purple) region, the Love wave will arrive
+earlier, than without any perturbation. By contrary, if this positive
+anomaly lies in a red region, the Love wave will arrive later. Really.
+Really?<br>
+<br>
+ <img style="width: 206px; height: 281px;" alt="analytic kernel Love 150 s" src="./images/image_kernelanalyticL1503D.jpg" align="left">&nbsp;<br>
+<br>
+A nasty thing with those Born kernels is that they become singular at the source and receiver
+(Spetzler et al., 2002) when you use the far-field Green's tensor,
+which most people do so far. So you have to get around this problem.
+Perhaps you do some averaging, perhaps some weighting or damping...
+anyway, the singularities were not really physical.
+The peeks in the picture on the left arise from these singularities when you do just a little averaging.
+A way to avoid them, is e.g. to take a near-field approach to the Green's tensor.
+Just a few people did this till now (Favier et al., 2004). So any other ideas?
+<br>
+ <img style="width: 206px; height: 281px;" alt="numerical kernel Love 150 s" src="./images/image_kernelL1503D.jpg" align="right">
+<br>
+<br>
+<br>
+<br>
+Here's where the membrane waves come into play.
+Do the trick with the scattering from above and you can calculate the kernels numerically.
+No far-field approximation is needed this way. And all you get are pretty looking sensitivity kernels...
+<br>
+<br>
+<br>
+<br>
+<br clear="all">
+<br>
+<br>
+
+<h3 class="title"><span>references:</span></h3>
+<p>
+<b>Peter, D.</b>, L. Boschi and J.H. Woodhouse, 2009.
+<a href="http://www3.interscience.wiley.com/journal/122260377/abstract">
+Tomographic resolution of ray and finite-frequency methods: a membrane-wave investigation
+</a>,
+<i>Geophys. J. Int.<i>,
+177, 624-638.
+<br>
+<br>
+
+<b>Peter, D.</b>, C. Tape, L. Boschi and J. H. Woodhouse, 2007.
+<a href="http://www3.interscience.wiley.com/journal/118543453/abstract">
+Surface wave tomography: global membrane waves and adjoint methods
+</a>, <i>Geophys. J. Int.</i>,
+171, 1098 - 1117.
+<br>
+<br>
+
+Favier, N., S. Chevrot and D. Komatitsch, 2004. Near-field influence on shear wave splitting and traveltime
+sensitivity kernels, <i>Geophys. J. Int.</i>, <b>156</b>, 467-482.
+<br>
+<br>
+
+Spetzler, J., J. Trampert and R. Snieder, 2002. The effect of scattering in surface wave tomography, <i>Geo-
+phys. J. Int.</i>, <b>149</b>, 755-767.
+
+</p></div></div><!-- end #content -->
+
+<div id="contactbar">
+<div class="box">
+<ul>
+<h3>benchmarks:</h3> 
+<a href="predictions.html">predictions</a> 
+<br>
+<br>
+<a href="inversions.html">inversions</a>
+<br>
+<br>
+<li></li>
+</ul>
+</div></div> <!-- end #contactbar -->
+</div><!-- wrapper pager -->
+
+<div style="clear: both;">&nbsp;</div>
+<div id="footer">
+<p id="legal">&copy; October 2014</p>
+<p id="links"><a href="http://www.geophys.ethz.ch/">Institute of Geophysics</a>
+| <a href="http://www.ethz.ch/">ETH Zurich </a></p>
+
+</div> <!-- end #footer -->
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=865844; var sc_partition=3; var sc_security="d4b9590a"; var sc_invisible=1; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript>
+<a href="http://www.statcounter.com/"
+target="_blank"><img
+src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
+alt="web site hit counter" border="0"></a>
+</noscript>
+<!-- End of StatCounter Code -->
+
+<!-- Start of google analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-2106342-4', 'ethz.ch');
+  ga('send', 'pageview');
+</script>
+<!-- End of google analytics -->
+
+</body>
+</html>

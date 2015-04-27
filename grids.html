@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+
+  <meta name="keywords" content="scattering sensitivity, sensitivity kernels,
+			surface waves, global tomography, Born approximation, membrane waves,
+			finite-frequency effects, computational seismology, Frechet derivatives, seismic tomography" />
+
+  <meta name="verify-v1" content="2eJEXClAA+iCOCcU4YYlWQYcAaSoQDK+PM/9detmgEE=" />
+  <meta name="description" content="personal webpage of daniel peter dedicated to
+			seismology and global tomography" />
+  <meta name="title" content="daniel peter - Institute of Geophysics" />
+
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway|Exo+2|Lato">
+  <link href="default.css" rel="stylesheet" type="text/css" />
+
+  <title>daniel peter - Institute of Geophysics</title>
+
+  <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" language="JavaScript" type="text/javascript"></script>
+  <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" language="JavaScript" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<div id="header"><!-- header -->
+<div class="img3">
+</div></div>
+
+<div id="wrapper"><!-- wrapper pager -->
+<div class="pathline"><!-- START path -->
+<a class="path" href="http://www.ethz.ch/">ETH Zurich </a>
+- <a class="path" href="http://www.geophys.ethz.ch/">Institute of Geophysics</a>
+- <a class="path" href="http://www.seg.ethz.ch">Seismology and Geodynamics</a>
+- <a class="path" href="http://n.ethz.ch/~peterda/">Daniel Peter</a>
+&nbsp;</div><!-- END path -->
+
+<div id="sidebar">
+<div class="box">
+<ul>
+  <li class="first"><a href="index.html">Home</a></li>
+  <li>
+    <a href="research.html">Research:</a>
+    <br>
+    <br>
+  <ul>
+  <font color="#666666">Wave propagation</font><br>
+    <a href="3dwaves.html">3D seismic waves</a><br>
+    <a href="grids.html">Spherical Grids</a><br>
+    <a href="waves.html">Membrane waves</a><br>
+    <a href="rays.html">Ray tracing</a><br>
+    <br>
+  <font color="#666666">Inverse problems</font><br>
+    <a href="3dsensitivity.html">3D Sensitivity kernels</a><br>
+    <a href="sensitivity.html">Phase-velocity Sensitivity kernels</a><br>
+    <a href="mediterranean.html">Mediterranean Tomography</a><br>
+  </ul>
+  </li>
+  <li><a href="publications.html">Publications</a></li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+</div></div> <!-- end #sidebar -->
+
+<div id="content">
+<div class="post">
+<h1 class="title"><span>discretization</span></h1>
+<p>
+<img src="./images/spheres.jpg" align="right" border="0" alt="spherical discretization" width="100%">
+Geodesic grids are an interesting subject of its own. How do you discretize the sphere
+in a uniform way? For membrane waves, this is an investigation worth spending some
+time on.
+<br>
+<br>
+Where to start? First of all,
+ask <a href="http://www.giseis.alaska.edu/input/carl/" target="_blank">Carl Tape</a>.
+He wrote such a nice master thesis about ray theory and how to investigate it on a spherical membrane,
+that I worked the next years on figuring out how he did all this.
+He used a grid which is based upon the two platonic solids, a
+<a class="link" href="http://en.wikipedia.org/wiki/Platonic_solid">dodecahedron and icosahedron</a>;
+a setup for which <a href="http://www.earth.ox.ac.uk/people/profiles/academic/john" target="_blank">John Woodhouse</a>
+has the construction map and provided it for this study.
+Now we build our basic set of vertices which is then refined by subfolding spherical triangles between them
+(and the triangle corners build the centers of the pentagons and hexagons we need for the calculations).
+This subfolding can be done as many times as you like to.
+(I'm not yet sure if it makes sense to do it more than six times. It depends upon the waves or more probably
+upon their wavelengths and how many points per wavelength to put into).
+<br>
+<br clear="all">
+</p>
+
+<h2 class="title"><span>uniformity</span></h2>
+<p>
+<img src="./images/gridratios.jpg" align="right" border="0" alt="grid ratios" width="70%">
+Very important is how <b>uniformly distributed</b> your vertices are.
+To have a measure for this, we take a look at ratios between the smallest and biggest:
+for cell areas, for cell edges, for the distance from one cell center to its neighbors.
+The closer this ratio is to one, the better. As you can see, we are close but not there.<br>
+<br>
+<br clear="all">
+</p>
+
+<h2 class="title"><span>refinement</span></h2>
+<p>
+That's the main problem in all these grid constructions, you just can't discretize the sphere
+in a uniform way while you only <b>subdivide triangles</b>.
+Take a look at the following picture and you can see that all these nice lines on the sphere. <p></p>
+<img src="./images/cellFractionAverage.gif" align="left" border="0" alt="cell fractions" width="70%">
+Well, they appear when you distort pentagons and hexagons. And they don't disappear after
+refinement of the grid. Basically this is told us when we take a look at this distance between
+midpoints of cell centers and corresponding cell edges.
+<b>Heikes and Randall</b> showed us already in 1995 that this distance is then leading to errors
+in our calculation of the Laplacian. But step by step.
+<br>
+<br clear="all">
+</p>
+
+
+<h2 class="title"><span>spherical Laplacian</span></h2>
+<p>
+You can calculate the <a class="link" href="http://en.wikipedia.org/wiki/Laplacian">Laplacian</a>
+in this discretized way for the sphere. It just depends on cell areas,
+the length of cell edges and the distance between the cell centers.
+And that's the problem. Can you see these little tiny light and dark spots on the biggest sphere?
+<br>
+
+<img src="./images/numericalErrorL6M1.jpg" align="left" border="0" alt="numerical error" width="95%">
+<br>
+These spots are cells on which our Laplacian is really bad.
+Now the one million Swiss franc question:
+Is there a relation between them and the nice lines from above?
+Sorry, that's Heikes and Randall which already found the answer.
+And yes, they stick together.
+
+<br>
+<br clear="all">
+<br>
+<br>
+</p>
+
+<h3 class="title"><span>references:</span></h3>
+<p>
+<b>Peter, D.</b>, C. Tape, L. Boschi and J. H. Woodhouse, 2007.
+<a href="http://www3.interscience.wiley.com/journal/118543453/abstract">
+Surface wave tomography: global membrane waves and adjoint methods
+</a>, <i>Geophys. J. Int.</i>,
+171, 1098 - 1117.
+<br>
+<br>
+
+Tape, C., 2003. <i>Waves on a Spherical Membrane</i>, M.Sc. thesis, University of Oxford, U.K.
+<br>
+<br>
+
+Heikes, R. and D. A. Randall, 1995. Numerical integration of the shallow-water equations on a twisted
+icosahedral grid.1. Basic design and results of tests, <i>Mon. Weather Rev.</i>, <b>123</b>, 1862-1880.
+<br>
+<br>
+
+Heikes, R. and D. A. Randall, 1995. Numerical integration of the shallow-water equations on a twisted
+icosahedral grid.2. A detailed description of the grid and an analysis of numerical accuracy, <i>Mon.
+Weather Rev.</i>, <b>123</b>, 1881-1887.
+<br>
+<br>
+
+</p>
+
+</div></div><!-- end #content -->
+
+<div id="contactbar">
+<div class="box">
+<ul>
+<h3>further informations:</h3> 
+<a href="http://kiwi.atmos.colostate.edu:80/BUGS/">Geodesic grids</a>	
+<br>
+<br>
+<a href="http://www.ncgia.ucsb.edu/globalgrids-book/song-kimmerling-sahr/">
+Subdivision method</a> 
+<br>
+<br>
+<li></li>
+</ul>
+</div></div> <!-- end #contactbar -->
+</div><!-- wrapper pager -->
+
+<div style="clear: both;">&nbsp;</div>
+<div id="footer">
+<p id="legal">&copy; October 2014</p>
+<p id="links"><a href="http://www.geophys.ethz.ch/">Institute of Geophysics</a>
+| <a href="http://www.ethz.ch/">ETH Zurich </a></p>
+
+</div> <!-- end #footer -->
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=865844; var sc_partition=3; var sc_security="d4b9590a"; var sc_invisible=1; </script>
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript>
+<a href="http://www.statcounter.com/"
+target="_blank"><img
+src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
+alt="web site hit counter" border="0"></a>
+</noscript>
+<!-- End of StatCounter Code -->
+
+<!-- Start of google analytics Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-2106342-4', 'ethz.ch');
+  ga('send', 'pageview');
+</script>
+<!-- End of google analytics -->
+
+</body>
+</html>
