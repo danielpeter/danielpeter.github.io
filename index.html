@@ -2,24 +2,34 @@
 <html>
 
 <head>
+  <!-- meta informations -->
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
+  <!-- internet explorer: remove this line if using the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
   <meta name="keywords" content="scattering sensitivity, sensitivity kernels,
 			surface waves, global tomography, Born approximation, membrane waves,
-			finite-frequency effects, computational seismology, Frechet derivatives, seismic tomography" />
+			finite-frequency effects, computational seismology, Frechet derivatives, seismic tomography,
+      high-performance computing, HPC, adjoint tomography" />
 
   <meta name="verify-v1" content="2eJEXClAA+iCOCcU4YYlWQYcAaSoQDK+PM/9detmgEE=" />
-  <meta name="description" content="personal webpage of daniel peter dedicated to
-			seismology and global tomography" />
-  <meta name="title" content="daniel peter - Institute of Geophysics" />
 
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway|Exo+2|Lato">
+  <meta name="description" content="personal webpage of daniel peter dedicated to seismology and global tomography" />
+  <meta name="title" content="daniel peter" />
+
+  <!-- responsiveness -->
+  <meta name="viewport" content="width=device-width" />
+    
+  <!-- font -->
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway|Exo+2|Lato" />
+
+  <!-- stylesheet -->
   <link href="default.css" rel="stylesheet" type="text/css" />
 
   <title>daniel peter</title>
 
+  <!-- quicktime -->
   <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" language="JavaScript" type="text/javascript"></script>
   <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" language="JavaScript" type="text/javascript"></script>
 </head>
@@ -31,44 +41,63 @@
 <div class="img2">
 </div></div>
 
-<div id="wrapper"><!-- wrapper pager -->
 <div class="pathline"><!-- START path -->
 <a class="path" href="http://danielpeter.github.io">Daniel Peter</a>
 <p id="links"><a class="path" href="https://github.com/danielpeter">View on Github</a></p>
 &nbsp;
 &nbsp;</div><!-- END path -->
 
-<div id="sidebar">
-<div class="box">
+<!--
+<script>
+// menu display control
+$(window).scroll(function() {
+if($(document).scrollTop()>$('.static_menu_position').position().top)
+  $('.static_menu').css({'position':'fixed','zIndex':100,'top':'0','width':'100%'});
+else
+  $('.static_menu').css({'position':'relative'});
+});  
+</script>  
+-->
+
+<!-- navigation -->
+<div class="n">
 <ul>
-  <li class="first"><a href="index.html">Home</a></li>
-  <li>
-    <a href="research.html">Research:</a>
-    <br>
-    <br>
-  <ul>
-  <font color="#666666">Wave propagation</font><br>
-    <a href="3dwaves.html">3D seismic waves</a><br>
-    <a href="grids.html">Spherical Grids</a><br>
-    <a href="waves.html">Membrane waves</a><br>
-    <a href="rays.html">Ray tracing</a><br>
-    <br>
-  <font color="#666666">Inverse problems</font><br>
-    <a href="3dsensitivity.html">3D Sensitivity kernels</a><br>
-    <a href="sensitivity.html">Phase-velocity Sensitivity kernels</a><br>
-    <a href="mediterranean.html">Mediterranean Tomography</a><br>
-  </ul>
-  </li>
+  <li class="active"><a href="index.html">Home</a></li>
+  <li><a href="research.html">Research</a><span><div class="arrow-down"></div></span>
+    <ul id="subnav">
+      <li><span id="comment">Wave propagation</span>
+        <ul id="deepnav">
+          <li><a href="3dwaves.html">3D seismic waves</a></li>
+          <li><a href="grids.html">Spherical Grids</a></li>
+          <li><a href="waves.html">Membrane waves</a></li>
+          <li><a href="rays.html">Ray tracing</a></li>
+        </ul>
+        </li>
+      <li><span id="comment">Inverse problems</span>
+        <ul id="deepnav">
+          <li><a href="3dsensitivity.html">3D Sensitivity kernels</a></li>
+          <li><a href="sensitivity.html">Phase-velocity Sensitivity kernels</a></li>
+          <li><a href="mediterranean.html">Mediterranean Tomography</a></li>
+        </ul>
+        </li>
+    </ul></li>
   <li><a href="publications.html">Publications</a></li>
   <li><a href="downloads.html">Downloads</a></li>
   <li><a href="contact.html">Contact</a></li>
 </ul>
+</div> <!-- end navigation -->
+
+
+<div id="wrapper"><!-- wrapper pager -->
+<div id="sidebar">
+<div class="box">
 </div></div> <!-- end #sidebar -->
 
 <div id="content">
 <div class="post">
 <h1 class="title"><span>Research interests</span></h1>
 
+<!-- research topics -->
 <p>
 <i>
 <b><font color="000066">COMPUTATIONAL SEISMOLOGY</font></b>
@@ -91,6 +120,7 @@ Seismic source verification and 3D source inversions
 </i>
 </p>
 
+<!-- research motiviation -->
 <p>
 <img src="images/harmonic.gif" alt="" class="left" />
 The main motivation for pursuing my research interests in computational seismology is to obtain
@@ -122,10 +152,9 @@ We also use the global code to produce synthetics and movies in near-real time f
 be seen at <a class="link" href="http://global.shakemovie.princeton.edu/">global.shakemovie.princeton.edu</a>.
 </p>
 
-<p>
-<hr>
-</p>
+<p> <hr> </p>
 
+<!-- position info -->
 <p>
 Currently, I'm assistant professor in the <a href="http://erse.kaust.edu.sa/">Earth Sciences and Engineering (ErSE) Program</a>
 within the <a href="http://pse.kaust.edu.sa">Physical Sciences and Engineering (PSE) Division</a> at <b>KAUST</b> (King Abdullah University of Science and Technology), Saudi Arabia.
@@ -142,16 +171,16 @@ where I was responsible for the application support of the HPC network <i><a hre
 <div id="contactbar">
 <div class="box">
 <ul>
+<!-- person info -->
 <img src="./images/daniel.jpg" align="middle" border="0" alt="" width="100%">
 <br> 
 <br>
 <h3>Daniel Peter</h3> 
-current address:<br>
+<i>current address:</i><br>
 <br>
-<br>
-  KAUST - King Abdullah University of Science and Technology<br>
-  Al-Khawarizmi Building, Office 3602<br>
-  Thuwal 23955-6900, Kingdom of Saudi Arabia<br>
+<b>KAUST</b> - King Abdullah University of Science and Technology<br>
+Al-Khawarizmi Building, Office 3602<br>
+Thuwal 23955-6900, Kingdom of Saudi Arabia<br>
 <br>
 Tel: +966 (54) 470 0405<br>
 <br>
@@ -162,13 +191,27 @@ CV
 </a>
 <br>
 
-
 <li></li>
 </ul>
-</div></div> <!-- end #contactbar -->
+
+<!-- open positions -->
+<span id="open-positions">
+<h2>Open Positions</h2>
+<br>
+Within my research group at KAUST, there are openings
+for a <b>PhD student</b> as well as a <b>Post-Doc</b> position.
+<br>
+<br>
+Focus will be on computational seismology and seismic inversions,
+with new algorithmic developments for high-performance computing.
+If interested in coming to join the group at KAUST, please contact me for further details.
+<br>
+<br>
+</span></div></div> <!-- end #contactbar -->
 </div><!-- wrapper pager -->
 
 <div style="clear: both;">&nbsp;</div>
+
 <div id="footer">
 <p id="legal">&copy; July 2015</p>
 <!--
