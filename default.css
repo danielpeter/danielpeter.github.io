@@ -682,6 +682,7 @@ Media query
   body{
     font-size: 16px;
     width: 480px;
+    margin: 0;
   }
   h1, h2, h3{
     font-size: 18pt;
@@ -720,12 +721,13 @@ Media query
   }
   #content{
     padding-top: 15px;
+    width: 480px;
   }
   #contactbar {
     width: 480px;
   }
   #footer{
-    width: 400px;
+    width: 480px;
   }
   /* menu bar */
   .n {
