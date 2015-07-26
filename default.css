@@ -863,7 +863,7 @@ Media query
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0px 5px 5px #888888;
   }
-  .n:hover ul, .n:focus ul {
+  .n:hover ul, .n:active ul {
     display: inline-block;
   }
   .n li {
