@@ -27,22 +27,30 @@
   <title>daniel peter</title>
 
   <!-- quicktime -->
-  <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" language="JavaScript" type="text/javascript"></script>
-  <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" language="JavaScript" type="text/javascript"></script>
-</head>
+  <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" type="text/javascript"></script>
+  <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" type="text/javascript"></script>
 
+  <!-- creates css body.loaded class -->
+  <script type="text/javascript">window.onload = function(){document.body.setAttribute('class','loaded');}</script>
+</head>
 
 <body>
 
 <header>
 <div class="parallax"><!-- parallax -->
-<div class="parallax_layer_back img2"></div>
-<div class="parallax_layer_front pathline"><!-- path line -->
-<a class="path" href="http://danielpeter.github.io">Daniel Peter</a><br><hr>
-<p id="links"><a class="pathlink" href="https://github.com/danielpeter">View on Github</a></p>
+<div class="parallax_layer parallax_layer_back">
+<div class="img_background img2"></div>
+</div>
+<div class="parallax_layer parallax_layer_front">
+<div class="pathline"><!-- path line -->
+<a class="path" href="http://danielpeter.github.io">Daniel Peter</a>
+<span style="float:right;font-weight: 100;">Research</span>
+<br><hr>
+<p class="links"><a class="pathlink" href="https://github.com/danielpeter">View on Github</a></p>
 </div><!-- end of path line -->
+</div>
 </div><!-- end of parallax -->
-</header>
+</header><!-- end header -->
 
 <!--
 <script>
@@ -60,18 +68,18 @@ else
 <a href="#" onclick="return true" id="menu-icon"></a>
 <ul>
   <li class="active"><a href="index.html">Home</a></li>
-  <li><div id="topnav"><a href="research.html">Research</a></div><span><div class="arrow-down"></div></span>
+  <li><div id="topnav"><a href="research.html">Research</a></div><span class="arrow-down"></span>
     <ul id="subnav">
-      <li><span id="comment">Wave propagation</span>
-        <ul id="deepnav">
+      <li><span class="comment">Wave propagation</span>
+        <ul class="deepnav">
           <li><a href="3dwaves.html">3D seismic waves</a></li>
           <li><a href="grids.html">Spherical Grids</a></li>
           <li><a href="waves.html">Membrane waves</a></li>
           <li><a href="rays.html">Ray tracing</a></li>
         </ul>
         </li>
-      <li><span id="comment">Inverse problems</span>
-        <ul id="deepnav">
+      <li><span class="comment">Inverse problems</span>
+        <ul class="deepnav">
           <li><a href="3dsensitivity.html">3D Sensitivity kernels</a></li>
           <li><a href="sensitivity.html">Phase-velocity Sensitivity kernels</a></li>
           <li><a href="mediterranean.html">Mediterranean Tomography</a></li>
@@ -92,7 +100,7 @@ else
 <div class="post">
 <h1 class="title"><span>discretization</span></h1>
 <p>
-<img src="./images/spheres.jpg" align="right" border="0" alt="spherical discretization" width="100%">
+<img class="right" src="./images/spheres.jpg" alt="spherical discretization">
 Geodesic grids are an interesting subject of its own. How do you discretize the sphere
 in a uniform way? For membrane waves, this is an investigation worth spending some
 time on.
@@ -112,18 +120,20 @@ This subfolding can be done as many times as you like to.
 (I'm not yet sure if it makes sense to do it more than six times. It depends upon the waves or more probably
 upon their wavelengths and how many points per wavelength to put into).
 <br>
-<br clear="all">
+<br style="clear: both;">
+<br>
 </p>
 
 <h2 class="title"><span>uniformity</span></h2>
 <p>
-<img src="./images/gridratios.jpg" align="right" border="0" alt="grid ratios" width="70%">
+<img class="right size-60" src="./images/gridratios.jpg" alt="grid ratios">
 Very important is how <b>uniformly distributed</b> your vertices are.
 To have a measure for this, we take a look at ratios between the smallest and biggest:
 for cell areas, for cell edges, for the distance from one cell center to its neighbors.
 The closer this ratio is to one, the better. As you can see, we are close but not there.<br>
 <br>
-<br clear="all">
+<br style="clear: both;">
+<br>
 </p>
 
 <h2 class="title"><span>refinement</span></h2>
@@ -131,14 +141,15 @@ The closer this ratio is to one, the better. As you can see, we are close but no
 That's the main problem in all these grid constructions, you just can't discretize the sphere
 in a uniform way while you only <b>subdivide triangles</b>.
 Take a look at the following picture and you can see that all these nice lines on the sphere. <p></p>
-<img src="./images/cellFractionAverage.gif" align="left" border="0" alt="cell fractions" width="70%">
+<img class="left size-60" src="./images/cellFractionAverage.gif" alt="cell fractions">
 Well, they appear when you distort pentagons and hexagons. And they don't disappear after
 refinement of the grid. Basically this is told us when we take a look at this distance between
 midpoints of cell centers and corresponding cell edges.
 <b>Heikes and Randall</b> showed us already in 1995 that this distance is then leading to errors
 in our calculation of the Laplacian. But step by step.
 <br>
-<br clear="all">
+<br style="clear: both;">
+<br>
 </p>
 
 
@@ -150,7 +161,7 @@ the length of cell edges and the distance between the cell centers.
 And that's the problem. Can you see these little tiny light and dark spots on the biggest sphere?
 <br>
 
-<img src="./images/numericalErrorL6M1.jpg" align="left" border="0" alt="numerical error" width="95%">
+<img class="left" src="./images/numericalErrorL6M1.jpg" alt="numerical error">
 <br>
 These spots are cells on which our Laplacian is really bad.
 Now the one million Swiss franc question:
@@ -159,8 +170,7 @@ Sorry, that's Heikes and Randall which already found the answer.
 And yes, they stick together.
 
 <br>
-<br clear="all">
-<br>
+<br style="clear: both;">
 <br>
 </p>
 
@@ -196,8 +206,7 @@ Weather Rev.</i>, <b>123</b>, 1881-1887.
 
 <div id="contactbar">
 <div class="box">
-<ul>
-<h3>further informations:</h3> 
+<h3>further informations:</h3>
 <a href="http://kiwi.atmos.colostate.edu:80/BUGS/">Geodesic grids</a>	
 <br>
 <br>
@@ -205,6 +214,9 @@ Weather Rev.</i>, <b>123</b>, 1881-1887.
 Subdivision method</a> 
 <br>
 <br>
+
+<!-- dotted horizontal line -->
+<ul>
 <li></li>
 </ul>
 </div>
@@ -214,19 +226,19 @@ Subdivision method</a>
 <div style="clear: both;">&nbsp;</div>
 
 <footer>
-<p id="legal">&copy; November 2015</p>
-<p id="links"><a href="http://danielpeter.github.io">Daniel Peter</a></p>
+<p class="legal">&copy; November 2015</p>
+<p class="links"><a href="http://danielpeter.github.io">Daniel Peter</a></p>
 </footer> <!-- end #footer -->
 
 <!-- Start of StatCounter Code -->
-<script type="text/javascript" language="javascript">
+<script type="text/javascript">
 var sc_project=865844; var sc_partition=3; var sc_security="d4b9590a"; var sc_invisible=1; </script>
-<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>
 <noscript>
 <a href="http://www.statcounter.com/"
-target="_blank"><img
-src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
-alt="web site hit counter" border="0"></a>
+target="_blank">
+<img src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
+alt="web site hit counter"></a>
 </noscript>
 <!-- End of StatCounter Code -->
 

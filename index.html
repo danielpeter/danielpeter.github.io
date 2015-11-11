@@ -27,22 +27,30 @@
   <title>daniel peter</title>
 
   <!-- quicktime -->
-  <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" language="JavaScript" type="text/javascript"></script>
-  <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" language="JavaScript" type="text/javascript"></script>
-</head>
+  <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" type="text/javascript"></script>
+  <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" type="text/javascript"></script>
 
+  <!-- creates css body.loaded class -->
+  <script type="text/javascript">window.onload = function(){document.body.setAttribute('class','loaded');}</script>
+</head>
 
 <body>
 
 <header>
 <div class="parallax"><!-- parallax -->
-<div class="parallax_layer_back img1"></div>
-<div class="parallax_layer_front pathline"><!-- path line -->
-<a class="path" href="http://danielpeter.github.io">Daniel Peter</a><br><hr>
-<p id="links"><a class="pathlink" href="https://github.com/danielpeter">View on Github</a></p>
+<div class="parallax_layer parallax_layer_back">
+<div class="img_background img1"></div>
+</div>
+<div class="parallax_layer parallax_layer_front">
+<div class="pathline"><!-- path line -->
+<a class="path" href="http://danielpeter.github.io">Daniel Peter</a>
+<span style="float:right;font-weight: 100;">Home</span>
+<br><hr>
+<p class="links"><a class="pathlink" href="https://github.com/danielpeter">View on Github</a></p>
 </div><!-- end of path line -->
+</div>
 </div><!-- end of parallax -->
-</header>
+</header><!-- end header -->
 
 <!--
 <script>
@@ -60,18 +68,18 @@ else
 <a href="#" onclick="return true" id="menu-icon"></a>
 <ul>
   <li class="active"><a href="index.html">Home</a></li>
-  <li><div id="topnav"><a href="research.html">Research</a></div><span><div class="arrow-down"></div></span>
+  <li><div id="topnav"><a href="research.html">Research</a></div><span class="arrow-down"></span>
     <ul id="subnav">
-      <li><span id="comment">Wave propagation</span>
-        <ul id="deepnav">
+      <li><span class="comment">Wave propagation</span>
+        <ul class="deepnav">
           <li><a href="3dwaves.html">3D seismic waves</a></li>
           <li><a href="grids.html">Spherical Grids</a></li>
           <li><a href="waves.html">Membrane waves</a></li>
           <li><a href="rays.html">Ray tracing</a></li>
         </ul>
         </li>
-      <li><span id="comment">Inverse problems</span>
-        <ul id="deepnav">
+      <li><span class="comment">Inverse problems</span>
+        <ul class="deepnav">
           <li><a href="3dsensitivity.html">3D Sensitivity kernels</a></li>
           <li><a href="sensitivity.html">Phase-velocity Sensitivity kernels</a></li>
           <li><a href="mediterranean.html">Mediterranean Tomography</a></li>
@@ -95,29 +103,29 @@ else
 <!-- research topics -->
 <p>
 <i>
-<b><font color="000066">COMPUTATIONAL SEISMOLOGY</font></b>
+<b><span class="color_title">COMPUTATIONAL SEISMOLOGY</span></b>
 <br>
-<font color="666666">
+<span class="color_descr">
 Numerical methods for seismic wave propagation, applications to High-Performance Computing
-</font>
+</span>
 <br>
-<b><font color="000066">GEOPHYSICAL INVERSE PROBLEMS</font></b>
+<b><span class="color_title">GEOPHYSICAL INVERSE PROBLEMS</span></b>
 <br>
-<font color="666666">
+<span class="color_descr">
 Waveform-based seismic adjoint tomography, validation of global and regional seismic models
-</font>
+</span>
 <br>
-<b><font color="000066">EARTHQUAKE SEISMOLOGY</font></b>
+<b><span class="color_title">EARTHQUAKE SEISMOLOGY</span></b>
 <br>
-<font color="666666">
+<span class="color_descr">
 Seismic source verification and 3D source inversions
-</font>
+</span>
 </i>
 </p>
 
 <!-- research motiviation -->
 <p>
-<img src="images/harmonic.gif" alt="" class="left" />
+<img class="left" style="width: 25%;" src="images/harmonic.gif" alt="">
 The main motivation for pursuing my research interests in computational seismology is to obtain
 increasingly realistic simulations of ground motion and to improve images of Earth’s interior. The
 trend to faster calculations is due to astonishing advances in high-performance computing. This
@@ -147,14 +155,13 @@ We also use the global code to produce synthetics and movies in near-real time f
 be seen at <a class="link" href="http://global.shakemovie.princeton.edu/">global.shakemovie.princeton.edu</a>.
 </p>
 
-<p> <hr> </p>
-
+<!-- position info -->
+<hr>
 <p>
-<img src="./images/coding.jpg" align="middle" border="0" alt="" width="100%">
+<img class="middle" src="./images/coding.jpg" alt="">
 <br>
 </p>
 
-<!-- position info -->
 <p>
 Currently, I'm assistant professor in the <a href="http://erse.kaust.edu.sa/">Earth Sciences and Engineering (ErSE) Program</a>
 within the <a href="http://pse.kaust.edu.sa">Physical Sciences and Engineering (PSE) Division</a> at <b>KAUST</b> (King Abdullah University of Science and Technology), Saudi Arabia.
@@ -171,32 +178,30 @@ where I was responsible for the application support of the HPC network <i><a hre
 
 <div id="contactbar">
 <div class="box">
-<ul>
 <!-- person info -->
-<img class="img_circle" src="./images/daniel.jpg" align="middle" border="0" alt="" width="100%">
+<img class="circle middle" src="./images/daniel.jpg" alt="">
 <br> 
 <br>
 <h3>Daniel Peter</h3> 
 <i>current address:</i><br>
 <br>
 <b>KAUST</b> - King Abdullah University of Science and Technology<br>
-Al-Khawarizmi Building, Office 3602<br>
+Al-Khawarizmi Building 1, Office 3602<br>
 Thuwal 23955-6900, Kingdom of Saudi Arabia<br>
 <br>
 Tel: +966 (54) 470 0405<br>
 <br>
 <br>
-
-<a href="./pubs/CV_danielpeter.pdf">
-CV
-</a>
+<a href="./pubs/CV_danielpeter.pdf">CV</a>
 <br>
 
+<!-- dotted horizontal line -->
+<ul>
 <li></li>
 </ul>
 
 <!-- open positions -->
-<span id="open-positions">
+<div class="open-positions">
 <h2>Open Positions</h2>
 <br>
 Within my research group at KAUST, there are openings
@@ -212,26 +217,26 @@ please <a href="mailto:daniel.peter@kaust.edu.sa">contact me</a> for further det
 <br>
 <span style="float: right; font-size: 80%; color: #AAA;"><i>(November, 2015)</i></span>
 <br>
-</span></div>
+</div></div>
 </div> <!-- end #contactbar -->
 </section><!-- wrapper pager -->
 
 <div style="clear: both;">&nbsp;</div>
 
 <footer>
-<p id="legal">&copy; November 2015</p>
-<p id="links"><a href="http://danielpeter.github.io">Daniel Peter</a></p>
+<p class="legal">&copy; November 2015</p>
+<p class="links"><a href="http://danielpeter.github.io">Daniel Peter</a></p>
 </footer> <!-- end #footer -->
 
 <!-- Start of StatCounter Code -->
-<script type="text/javascript" language="javascript">
+<script type="text/javascript">
 var sc_project=865844; var sc_partition=3; var sc_security="d4b9590a"; var sc_invisible=1; </script>
-<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>
 <noscript>
 <a href="http://www.statcounter.com/"
-target="_blank"><img
-src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
-alt="web site hit counter" border="0"></a>
+target="_blank">
+<img src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
+alt="web site hit counter"></a>
 </noscript>
 <!-- End of StatCounter Code -->
 

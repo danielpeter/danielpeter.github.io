@@ -27,22 +27,30 @@
   <title>daniel peter</title>
 
   <!-- quicktime -->
-  <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" language="JavaScript" type="text/javascript"></script>
-  <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" language="JavaScript" type="text/javascript"></script>
-</head>
+  <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" type="text/javascript"></script>
+  <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" type="text/javascript"></script>
 
+  <!-- creates css body.loaded class -->
+  <script type="text/javascript">window.onload = function(){document.body.setAttribute('class','loaded');}</script>
+</head>
 
 <body>
 
 <header>
 <div class="parallax"><!-- parallax -->
-<div class="parallax_layer_back img3"></div>
-<div class="parallax_layer_front pathline"><!-- path line -->
-<a class="path" href="http://danielpeter.github.io">Daniel Peter</a><br><hr>
-<p id="links"><a class="pathlink" href="https://github.com/danielpeter">View on Github</a></p>
+<div class="parallax_layer parallax_layer_back">
+<div class="img_background img3"></div>
+</div>
+<div class="parallax_layer parallax_layer_front">
+<div class="pathline"><!-- path line -->
+<a class="path" href="http://danielpeter.github.io">Daniel Peter</a>
+<span style="float:right;font-weight: 100;">Research</span>
+<br><hr>
+<p class="links"><a class="pathlink" href="https://github.com/danielpeter">View on Github</a></p>
 </div><!-- end of path line -->
+</div>
 </div><!-- end of parallax -->
-</header>
+</header><!-- end header -->
 
 <!--
 <script>
@@ -60,18 +68,18 @@ else
 <a href="#" onclick="return true" id="menu-icon"></a>
 <ul>
   <li class="active"><a href="index.html">Home</a></li>
-  <li><div id="topnav"><a href="research.html">Research</a></div><span><div class="arrow-down"></div></span>
+  <li><div id="topnav"><a href="research.html">Research</a></div><span class="arrow-down"></span>
     <ul id="subnav">
-      <li><span id="comment">Wave propagation</span>
-        <ul id="deepnav">
+      <li><span class="comment">Wave propagation</span>
+        <ul class="deepnav">
           <li><a href="3dwaves.html">3D seismic waves</a></li>
           <li><a href="grids.html">Spherical Grids</a></li>
           <li><a href="waves.html">Membrane waves</a></li>
           <li><a href="rays.html">Ray tracing</a></li>
         </ul>
         </li>
-      <li><span id="comment">Inverse problems</span>
-        <ul id="deepnav">
+      <li><span class="comment">Inverse problems</span>
+        <ul class="deepnav">
           <li><a href="3dsensitivity.html">3D Sensitivity kernels</a></li>
           <li><a href="sensitivity.html">Phase-velocity Sensitivity kernels</a></li>
           <li><a href="mediterranean.html">Mediterranean Tomography</a></li>
@@ -101,7 +109,8 @@ And well, <b>no anisotropy</b>. I'm sorry to show this formula now, but I just h
 
 <br>
 
-<img src="./images/waveequation.gif" alt="wave equation" border="0" width="100%"> <br>
+<img src="./images/waveequation.gif" alt="wave equation">
+<br>
 
 <br>
 This is all there is to solve. The phase velocity <i>c</i> depends only on the
@@ -112,9 +121,11 @@ does the forcing term <i>f</i> (which we set to a really boring one). <br>
 So what? Call it a toy model. Realistic? No. Unless you consider a
 slightly more realistic approach. What I mean by that, is that we can
 put a phase velocity map on
-our sphere. <br>
+our sphere.
+<br>
+<br style="clear: both;">
+<br>
 
-<br clear="all">
 </p>
 
 
@@ -122,7 +133,8 @@ our sphere. <br>
 <h2 class="title"><span>phase velocity maps</span></h2>
 <p>
 
-<img src="./images/phasemap_6L35.gif" alt="love wave 35s phase velocity map" align="right" border="0"><br>
+<img class="right" src="./images/phasemap_6L35.gif" alt="love wave 35s phase velocity map">
+<br>
 
 
 These maps can be obtained for either <b>Love or Rayleigh waves</b>
@@ -131,20 +143,23 @@ informations (rather than by inversion of phase anomalies) for Love
 waves at a frequency of about 35 seconds. They have an area resolution
 of 2&ordm;x2&ordm; degree (you just ask <a href="http://www.sg.geophys.ethz.ch/geodynamics/lapo/index.html" target="_blank">Lapo</a> for it. He's doing these and other great inversion maps).
 <br>
-<br clear="all">
+<br style="clear: both;">
+<br>
+
 </p>
 
 
 <h2 class="title"><span>heterogeneity</span></h2>
 <p>
-<img src="./images/seismo_north.jpg" align="left" alt="phase velocity map"><br>
+<img class="left" src="./images/seismo_north.jpg" alt="phase velocity map">
+<br>
 Now let us propagate the model waves on that. Dispersion isn't anymore
 an option, since we're only looking at a predefined wave frequency. But
 we can compare <b>effects of heterogeneity</b> with the homogeneous one (and draw some nice pictures as well).<br>
 
 
 <br>
-<br clear="all">
+<br style="clear: both;">
 <br>
 <br>
 </p>
@@ -160,6 +175,8 @@ strong slow-velocity scatterer at the Himalayan region. The simulation ends afte
 reach again the source region.
 <br>
 <br>
+
+<!-- old video style
 <script type="text/javascript"><!--
 	QT_WritePoster_XHTML('Click to Play', 'packages/simulation2-poster.jpg',
 		'packages/creta-membrane-waves.mov',
@@ -168,7 +185,6 @@ reach again the source region.
 		'autoplay', 'true',
 		'bgcolor', 'black',
 		'scale', 'aspect');
-//-->
 </script>
 <noscript>
 <object width="480" height="496" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab">
@@ -188,20 +204,19 @@ reach again the source region.
 	</embed>
 </object>
 </noscript>
+-->
+
+<video width="480" height="496" controls poster="packages/simulation2-poster.jpg">
+<source src="packages/creta-membrane-waves.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+Your browser does not support the HTML5 video element
+</video>
 
 
 
-
-<br clear="all">
+<br style="clear: both;">
 <br>
 <br>
 </p>
-
-
-
-
-
-
 
 
 
@@ -227,7 +242,6 @@ Int.</i>, <b>102</b>, 89-100.
 
 <div id="contactbar">
 <div class="box">
-<ul>
 <h3>software repositories:</h3>
 <a href="http://www.spice-rtn.org/library/software.1.html">SPICE</a>
 <br>
@@ -239,6 +253,9 @@ Int.</i>, <b>102</b>, 89-100.
 <a href="./packages/membraneSphere-1.0.zip">membraneSphere-1.0.zip</a>
 <br>
 <br>
+
+<!-- dotted horizontal line -->
+<ul>
 <li></li>
 </ul>
 </div>
@@ -248,19 +265,19 @@ Int.</i>, <b>102</b>, 89-100.
 <div style="clear: both;">&nbsp;</div>
 
 <footer>
-<p id="legal">&copy; November 2015</p>
-<p id="links"><a href="http://danielpeter.github.io">Daniel Peter</a></p>
+<p class="legal">&copy; November 2015</p>
+<p class="links"><a href="http://danielpeter.github.io">Daniel Peter</a></p>
 </footer> <!-- end #footer -->
 
 <!-- Start of StatCounter Code -->
-<script type="text/javascript" language="javascript">
+<script type="text/javascript">
 var sc_project=865844; var sc_partition=3; var sc_security="d4b9590a"; var sc_invisible=1; </script>
-<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>
 <noscript>
 <a href="http://www.statcounter.com/"
-target="_blank"><img
-src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
-alt="web site hit counter" border="0"></a>
+target="_blank">
+<img src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
+alt="web site hit counter"></a>
 </noscript>
 <!-- End of StatCounter Code -->
 

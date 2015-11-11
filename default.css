@@ -152,7 +152,9 @@ a:visited {
 }
 
 img {
+  display: block;
 	border: none;
+  width: 100%;
 }
 
 img.left {
@@ -165,7 +167,12 @@ img.right {
 	margin: 0 0 0 15px;
 }
 
-.img_circle {
+img.middle {
+  margin: auto;
+	vertical-align: middle;
+}
+
+img.circle {
   /* round corners */
   -webkit-border-radius: 50%;
   -khtml-border-radius: 50%;
@@ -173,11 +180,13 @@ img.right {
   border-radius: 50%;
 }
 
-.img_shadow {
-  box-shadow: 0px 5px 5px #888888;
+img.size-60 {
+  width: 60%;
 }
 
-
+img.size-45 {
+  width: 45%;
+}
 
 /* -------------------------------------------------------------
 
@@ -191,59 +200,75 @@ header {
 }
 
 .parallax {
+  scroll-behavior: smooth; /* Firefox */
+
+  /* based on: http://keithclark.co.uk/articles/pure-css-parallax-websites 
+               full viewport height
+  */
   -webkit-perspective: 1px; /* Chrome, Safari, Opera */
+  -moz-perspective: 1px;
   perspective: 1px;
 
   -webkit-perspective-origin: 100% 50%; /* Chrome, Safari, Opera */
+  -moz-perspective-origin: 100% 50%;
   perspective-origin: 100% 50%;
 
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden; /* auto; */
 
-  height: 140px;
+  height: 140px; /* 100vh */
   width: 100%;
 }
 
-.parallax_layer_back{
-  position: fixed;
+.parallax_layer{
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  height: 140px;
+}
 
+.parallax_layer_back{
+  /* for effect with Safari */
+  position: fixed;
+
+  -webkit-transform: translateZ(-1px) scale(2); /* Chrome, Safari, Opera */
+  -moz-transform: translateZ(-1px) scale(2);
+  -ms-transform: translateZ(-1px) scale(2); /* IE 9 */
+  transform: translateZ(-1px) scale(2);
+
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+
+  z-index: -10;
+}
+
+.parallax_layer_front{
+  -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0); /* IE 9 */
+  transform: translateZ(0);
+
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+
+  z-index: -1;
+}
+
+.img_background {
   height: 150px;
   min-width: 950px;
 
   background: #ffffff;
   background-position: top left;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  -webkit-transform: translateZ(-1px) scale(2); /* Chrome, Safari, Opera */
-  -ms-transform: translateZ(-1px) scale(2); /* IE 9 */
-  transform: translateZ(-1px) scale(2);
-
-  -webkit-transform-origin: 100% 50%;
-  -ms-transform-origin: 100% 50%;
-  transform-origin: 100% 50%;
+  background-attachment: fixed; /* for some effect also with non-Safari */
 }
-
-.parallax_layer_front{
-  position: absolute;
-  top: 50%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
-  -ms-transform: translateZ(0); /* IE 9 */
-  transform: translateZ(0);
-
-  -webkit-transform-origin: 100% 50%;
-  -ms-transform-origin: 100% 50%;
-  transform-origin: 100% 50%;
-}
-
 
 .img1 {
 	background-image: url(images/img01.jpg);
@@ -383,7 +408,13 @@ Pathline
   text-decoration: none;
   /*border-bottom: 1px solid #cccccc;*/
 
-  padding-top: 3px;
+  font-family: 'Open Sans','Raleway', sans-serif;
+  font-size: 150%;
+
+  color: #fff;
+  /*background-color: rgba(20, 20, 20, 0.8);*/
+
+  padding-top: 80px;
   padding-bottom: 3px;
   padding-left: 14px;
   padding-right: 14px;
@@ -395,21 +426,60 @@ Pathline
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-
-  font-family: 'Open Sans','Raleway', sans-serif;
-  font-size: 150%;
-
-  color: #fff;
-  /*background-color: rgba(20, 20, 20, 0.8);*/
-
 }
 
 
-a.path, a.path:link, a.path:visited, a.path:hover { 
+a.path, a.path:link, a.path:visited, a.path:hover {
   font-weight: 900;
 	color: #fff;
   /*font-size: 85%;*/
   text-decoration: none;
+
+  display: inline-block;
+  overflow: hidden;
+
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+
+  -webkit-transition-delay: 0.75s;
+  -moz-transition-delay: 0.75s;
+  -o-transition-delay: 0.75s;
+  transition-delay: 0.75s;
+
+  -webkit-transform: translateX(-10px);
+  -moz-transform: translateX(-10px);
+  -ms-transform: translateX(-10px);
+  -o-transform: translateX(-10px);
+  transform: translateX(-10px);
+
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+
+  opacity: 0;
+}
+
+.pathline hr {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+  -webkit-transition-delay: 0.1s;
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+
+  opacity: 0.2;
 }
 
 a.pathlink, a.pathlink:link, a.pathlink:visited, a.pathlink:hover {
@@ -418,6 +488,33 @@ a.pathlink, a.pathlink:link, a.pathlink:visited, a.pathlink:hover {
   font-size: 60%;
   text-decoration: none;
 }
+
+/* see javascript in <body onload=..> for getting this loaded state */
+body.loaded a.path {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+
+  -moz-filter: blur(0);
+  -webkit-filter: blur(0);
+  -ms-filter: blur(0);
+  filter: blur(0);
+
+  opacity: 1.0;
+}
+
+body.loaded .pathline hr {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+
+  opacity: 0.5;
+}
+
 
 
 /* -------------------------------------------------------------
@@ -449,16 +546,23 @@ footer a:hover {
 	text-decoration: underline;
 }
 
-#legal {
+p.legal {
 	float: left;
 }
 
-p#links {
+p.links {
 	float: right;
 	margin: 0;
   padding-right: 10px;
 }
 
+.color_title {
+  color: #000066;
+}
+
+.color_descr {
+  color: #666666;
+}
 
 /* -------------------------------------------------------------
 
@@ -483,7 +587,7 @@ Play
 
   position: relative;
   top: 50%;
-  zoom: 100%; /* old IE */
+  zoom: 100%; /* old IE, Firefox */
   padding: .5em 1em;
   color: white;
 }
@@ -586,7 +690,7 @@ nav li:hover > ul#subnav {
 }
 
 /* shows menu arrow */
-nav li:hover > span > .arrow-down {
+nav li:hover > .arrow-down {
   opacity: 1.0;
   filter: alpha(opacity=100);
 
@@ -662,11 +766,6 @@ ul#subnav > li {
   margin: 0;
 }
 
-ul#deepnav > li {
-  padding: 0;
-  margin: 0;
-}
-
 ul#subnav li > a {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -687,6 +786,10 @@ ul#subnav li:hover > a {
   box-shadow: inset 2px 0px #52A792;  
 }
 
+ul.deepnav > li {
+  padding: 0;
+  margin: 0;
+}
 
 /* arrows */
 .arrow{
@@ -727,7 +830,7 @@ ul#subnav li:hover > a {
   display: block;
   position: relative;
 
-  top: -7px;
+  top: -8px;
   left: 0px;
   float: left;
   width: 0; 
@@ -737,7 +840,7 @@ ul#subnav li:hover > a {
   border-right: 5px solid transparent;  
   border-top: 5px solid #aaa;
 
-  opacity: 0.0;
+  opacity: 0.5;
   filter: alpha(opacity=0);
 
   -webkit-box-sizing: border-box;
@@ -775,15 +878,15 @@ Special spections
 
 ------------------------------------------------------------- */
 
-/* comment box */
-span#comment {
+/* comment navigation box */
+span.comment {
   color: #666;
   background-color: #DDF;
   display: block;
 }
 
 /* open-positions box */
-span#open-positions {
+.open-positions {
   display: block;
   position: relative;
   /*top: 320px;*/
@@ -861,7 +964,7 @@ Media query
     width: 100%;
   }
   /* color box */
-  span#open-positions {
+  .open-positions {
     top: 0;
   }
 }
@@ -982,7 +1085,7 @@ Media query
     display: inline-block;
   }
   /* special box */
-  span#open-positions {
+  .open-positions {
     top: 0;
   }
 }

@@ -27,22 +27,30 @@
   <title>daniel peter</title>
 
   <!-- quicktime -->
-  <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" language="JavaScript" type="text/javascript"></script>
-  <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" language="JavaScript" type="text/javascript"></script>
-</head>
+  <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" type="text/javascript"></script>
+  <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" type="text/javascript"></script>
 
+  <!-- creates css body.loaded class -->
+  <script type="text/javascript">window.onload = function(){document.body.setAttribute('class','loaded');}</script>
+</head>
 
 <body>
 
 <header>
 <div class="parallax"><!-- parallax -->
-<div class="parallax_layer_back img3"></div>
-<div class="parallax_layer_front pathline"><!-- path line -->
-<a class="path" href="http://danielpeter.github.io">Daniel Peter</a><br><hr>
-<p id="links"><a class="pathlink" href="https://github.com/danielpeter">View on Github</a></p>
+<div class="parallax_layer parallax_layer_back">
+<div class="img_background img3"></div>
+</div>
+<div class="parallax_layer parallax_layer_front">
+<div class="pathline"><!-- path line -->
+<a class="path" href="http://danielpeter.github.io">Daniel Peter</a>
+<span style="float:right;font-weight: 100;">Research</span>
+<br><hr>
+<p class="links"><a class="pathlink" href="https://github.com/danielpeter">View on Github</a></p>
 </div><!-- end of path line -->
+</div>
 </div><!-- end of parallax -->
-</header>
+</header><!-- end header -->
 
 <!--
 <script>
@@ -60,18 +68,18 @@ else
 <a href="#" onclick="return true" id="menu-icon"></a>
 <ul>
   <li class="active"><a href="index.html">Home</a></li>
-  <li><div id="topnav"><a href="research.html">Research</a></div><span><div class="arrow-down"></div></span>
+  <li><div id="topnav"><a href="research.html">Research</a></div><span class="arrow-down"></span>
     <ul id="subnav">
-      <li><span id="comment">Wave propagation</span>
-        <ul id="deepnav">
+      <li><span class="comment">Wave propagation</span>
+        <ul class="deepnav">
           <li><a href="3dwaves.html">3D seismic waves</a></li>
           <li><a href="grids.html">Spherical Grids</a></li>
           <li><a href="waves.html">Membrane waves</a></li>
           <li><a href="rays.html">Ray tracing</a></li>
         </ul>
         </li>
-      <li><span id="comment">Inverse problems</span>
-        <ul id="deepnav">
+      <li><span class="comment">Inverse problems</span>
+        <ul class="deepnav">
           <li><a href="3dsensitivity.html">3D Sensitivity kernels</a></li>
           <li><a href="sensitivity.html">Phase-velocity Sensitivity kernels</a></li>
           <li><a href="mediterranean.html">Mediterranean Tomography</a></li>
@@ -92,7 +100,8 @@ else
 <div class="post">
 <h1 class="title"><span>3D wave propagation</span></h1>
 <p>
-<img src="./images/model_specfem3d_globe.jpg" alt="SPECFEM3D_GLOBE mesh" border="0" width="100%" align="right"> <br>
+<img class="right" src="./images/model_specfem3d_globe.jpg" alt="SPECFEM3D_GLOBE mesh">
+<br>
 Simulating seismic wave propagation in 3D is quite a challenge, especially
 in complex geological settings. To make things easier from a numerical
 perspective, I helped enhancing the global scale package
@@ -104,13 +113,9 @@ when it comes to meshing your model. It also handles acoustic and elastic
 materials. And if you want to mix them together, it automatically takes
 the coupling between acoustic and elastic waves into account.
 
-
-
 As an illustration case, the movie below shows this coupling in a daily
 life example.
 
-<br>
-<br clear="all">
 <br>
 <br>
 </p>
@@ -127,27 +132,28 @@ and continue propagating as elastic waves. The interesting fact here is that
 for local to regional scale simulations of seismic waves propagating through Earth,
 we use exactly the same physical principles.<br>
 <br>
-<script type="text/javascript"><!--
+
+<!-- old video style
+<script type="text/javascript">
 	QT_WritePoster_XHTML('Click to Play', 'images/coffeecup-poster.jpg',
-		'images/coffeecup.mpg',
+		'images/coffeecup.mp4',
 		'480', '496', '',
 		'controller', 'true',
 		'autoplay', 'true',
 		'bgcolor', 'black',
 		'scale', 'aspect');
-//-->
 </script>
 <noscript>
 <object width="480" height="496" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab">
 	<param name="src" value="images/coffeecup-poster.jpg" />
-	<param name="href" value="images/coffeecup.mpg" />
+	<param name="href" value="images/coffeecup.mp4" />
 	<param name="target" value="myself" />
 	<param name="controller" value="false" />
 	<param name="autoplay" value="false" />
 	<param name="scale" value="aspect" />
 	<embed width="480" height="496" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"
 		src="images/coffeecup-poster.jpg"
-		href="images/coffeecup.mpg"
+		href="images/coffeecup.mp4"
 		target="myself"
 		controller="false"
 		autoplay="false"
@@ -155,11 +161,19 @@ we use exactly the same physical principles.<br>
 	</embed>
 </object>
 </noscript>
+-->
 
+<video width="480" height="496" controls poster="images/coffeecup-poster.jpg">
+<source src="images/coffeecup.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+Your browser does not support the HTML5 video element
+</video>
 
-<br clear="all">
+<br style="clear: both;">
 <br>
 <br>
+
+
+
 </p>
 
 
@@ -179,11 +193,13 @@ Forward and adjoint simulations of seismic wave propagation on fully unstructure
 
 <div id="contactbar">
 <div class="box">
-<ul>
 <h3>software repositories:</h3>
 <a href="http://www.geodynamics.org/">CIG</a>
 <br>
 <br>
+
+<!-- dotted horizontal line -->
+<ul>
 <li></li>
 </ul>
 </div>
@@ -193,19 +209,19 @@ Forward and adjoint simulations of seismic wave propagation on fully unstructure
 <div style="clear: both;">&nbsp;</div>
 
 <footer>
-<p id="legal">&copy; November 2015</p>
-<p id="links"><a href="http://danielpeter.github.io">Daniel Peter</a></p>
+<p class="legal">&copy; November 2015</p>
+<p class="links"><a href="http://danielpeter.github.io">Daniel Peter</a></p>
 </footer> <!-- end #footer -->
 
 <!-- Start of StatCounter Code -->
-<script type="text/javascript" language="javascript">
+<script type="text/javascript">
 var sc_project=865844; var sc_partition=3; var sc_security="d4b9590a"; var sc_invisible=1; </script>
-<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>
 <noscript>
 <a href="http://www.statcounter.com/"
-target="_blank"><img
-src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
-alt="web site hit counter" border="0"></a>
+target="_blank">
+<img src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
+alt="web site hit counter"></a>
 </noscript>
 <!-- End of StatCounter Code -->
 
