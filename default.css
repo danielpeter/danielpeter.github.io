@@ -188,6 +188,12 @@ img.size-45 {
   width: 45%;
 }
 
+video {
+  width: 100%;
+  max-width: 480px;
+  height: auto; /* 496px */
+}
+
 /* -------------------------------------------------------------
 
 Header
@@ -214,7 +220,7 @@ header {
   perspective-origin: 100% 50%;
 
   overflow-x: hidden;
-  overflow-y: hidden; /* auto; */
+  overflow-y: auto; /* auto; */
 
   height: 140px; /* 100vh */
   width: 100%;
@@ -227,6 +233,7 @@ header {
   bottom: 0;
   left: 0;
   height: 140px;
+  overflow: hidden;
 }
 
 .parallax_layer_back{
@@ -358,6 +365,10 @@ section {
 
 .box {
 	padding-top: 5px;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;  
 }
 
 .box .title {
@@ -613,7 +624,6 @@ nav {
 
   position:relative;
   width: 100%;  
-  min-width: 360px;
   height: 40px;
   
   float: left;
@@ -723,12 +733,12 @@ ul#subnav {
   -webkit-transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;
   -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;      
+  transition: all 1s ease-in-out;
+  */
 
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  */
 
   padding: 0;
   
@@ -741,10 +751,10 @@ ul#subnav {
   background-image: linear-gradient(#fff, #ddd);
   
   /* round corners */
-  border-radius: 5px;
-  -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 ul#subnav li a{
@@ -885,16 +895,22 @@ span.comment {
   display: block;
 }
 
+ul#subnav span.comment {
+  padding-left: 10px;
+}
+
 /* open-positions box */
 .open-positions {
   display: block;
   position: relative;
-  /*top: 320px;*/
+
 	padding: 10px 10px 0 10px;
 
   background-color: #BDC5E0;
   box-shadow: 0px 5px 5px #888888;
 }
+
+
 
 /* -------------------------------------------------------------
 
@@ -1045,9 +1061,16 @@ Media query
     float: left;
     width: 100%;
     position:relative;  
-    display: block;
-    padding: 0;
-    margin: 10px 10px 10px 10px;
+    display: inline-block;
+
+    padding: 10px;
+    margin: 0;
+
+    background-color: rgba(200, 200, 200, 0.8);
+    border-bottom: 1px solid #aaa;
+  }
+  nav li:hover {
+    background-color: rgba(255, 255, 255, 0.8);
   }
   nav li:hover ul {
     display: inline-block;
@@ -1064,7 +1087,7 @@ Media query
 
   ul#subnav {
     top: 2px;
-    left: 80px;
+    left: 100px;
     max-width: 240px;
   }
 
