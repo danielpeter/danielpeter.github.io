@@ -1069,7 +1069,7 @@ Media query
     background-color: rgba(200, 200, 200, 0.8);
     border-bottom: 1px solid #aaa;
   }
-  nav li:hover, li:focus {
+  nav li:hover, li:focus, li:active {
     background-color: rgba(255, 255, 255, 0.8);
   }
   nav li:hover ul {
