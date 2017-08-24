@@ -2,6 +2,8 @@
 
 /* -------------------------------------------------------------
 
+versioning:
+version 0.0.3: august 2017, daniel peter
 version 0.0.2: november 2015, daniel peter
 
 ------------------------------------------------------------- */
@@ -41,7 +43,8 @@ html {
   /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
   -webkit-text-size-adjust: 100%; 
   /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
-  -ms-text-size-adjust: 100%; 
+  -ms-text-size-adjust: 100%;
+  height: 100%;
 }
 
 body {
@@ -49,7 +52,6 @@ body {
   background-color: #ffffff;
   font-family: 'Open Sans','Raleway','Lato','Exo 2','HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue', Helvetica, sans-serif;
   font-weight: normal;
-  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -104,6 +106,8 @@ body {
   -webkit-text-size-adjust:100%;
   -moz-text-size-adjust:100%;
   -ms-text-size-adjust:100%;
+
+  height: 100%;
 }
 
 h1, h2, h3 {
@@ -315,6 +319,10 @@ Page
 section {
   display: block;
 	width: 950px;
+  /* to have footer at bottom */
+  min-height: -moz-calc(100% - 200px); /* Firefox */
+  min-height: -webkit-calc(100% - 200px); /* Chrome, Safari */
+  min-height: calc(100% - 200px); /* IE9+ and future browsers */
 }
 
 /* left column */
@@ -336,6 +344,7 @@ section {
 	float: left;
 	width: 250px;
 	background: white;
+  padding-left:15px;
 }
 
 
@@ -537,7 +546,9 @@ footer {
   display: block;
 	width: 100%;
 	min-height: 50px;
-	background: #595C6D no-repeat center top;
+  opacity: 1;
+	background: rgba(1,6,57,0.75) no-repeat center top; /*#595C6D*/
+  position: relative;
 }
 
 footer p {
@@ -973,7 +984,7 @@ Media query
     width: 100%;
   }
   #contactbar {
-    width: 100%;
+    width: 80%;
   }
   /* menu bar */
   nav {
@@ -1019,7 +1030,7 @@ Media query
     width: 100%;
   }
   #contactbar {
-    width: 100%;
+    width: 80%;
   }
   footer{
     width: 100%;
