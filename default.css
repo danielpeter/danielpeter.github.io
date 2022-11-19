@@ -649,11 +649,14 @@ nav {
   margin-bottom:20px;
   margin-left:0px;
 
+  /*
   background-image: -webkit-linear-gradient(#fff, #ddd);
   background-image: -moz-linear-gradient(#fff, #ddd);
   background-image: -ms-linear-gradient(#fff, #ddd);
   background-image: -o-linear-gradient(#fff, #ddd);
   background-image: linear-gradient(#fff, #ddd);
+  */
+  background-color: #FFF;
   border-bottom: 1px solid #cccccc;
 }
 
