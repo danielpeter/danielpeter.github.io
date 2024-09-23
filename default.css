@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway|Exo+2|Lato|Open+Sans");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
 
 /* -------------------------------------------------------------
 
 versioning:
+version 0.0.4: september 2024, daniel peter
 version 0.0.3: august 2017, daniel peter
 version 0.0.2: november 2015, daniel peter
 
@@ -961,7 +963,17 @@ ul#subnav span.comment {
   box-shadow: 0px 5px 5px #888888;
 }
 
-
+/* font-awesome */
+/* heart */
+.fa-heart:before{
+  color: red;
+  font-size: 1.5rem;
+}
+/* external link */
+.fa-external-link-alt:before{
+  padding-left: 2px;
+  padding-right: 5px;
+}
 
 /* -------------------------------------------------------------
 
