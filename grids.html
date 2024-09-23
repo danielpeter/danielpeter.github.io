@@ -27,8 +27,8 @@
   <title>daniel peter</title>
 
   <!-- quicktime -->
-  <script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" type="text/javascript"></script>
-  <script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" type="text/javascript"></script>
+  <script src="https://www.apple.com/library/quicktime/scripts/ac_quicktime.js" type="text/javascript"></script>
+  <script src="https://www.apple.com/library/quicktime/scripts/qtp_library.js" type="text/javascript"></script>
 
   <!-- creates css body.loaded class -->
   <script type="text/javascript">window.onload = function(){document.body.setAttribute('class','loaded');}</script>
@@ -88,7 +88,7 @@ else
     </ul></li>
   <li><a href="publications.html">Publications</a></li>
   <li><a href="downloads.html">Downloads</a></li>
-  <li><a href="contact.html">Contact</a></li>
+  <!-- <li><a href="contact.html">Contact</a></li> -->
 </ul>
 </nav> <!-- end navigation -->
 <section><!-- wrapper pager -->
@@ -98,7 +98,7 @@ else
 
 <div id="content">
 <div class="post">
-<h1 class="title"><span>discretization</span></h1>
+<h1 class="title"><span>Discretization</span></h1>
 <p>
 <img class="right" src="./images/spheres.jpg" alt="spherical discretization">
 Geodesic grids are an interesting subject of its own. How do you discretize the sphere
@@ -107,12 +107,12 @@ time on.
 <br>
 <br>
 Where to start? First of all,
-ask <a href="http://www.giseis.alaska.edu/input/carl/" target="_blank">Carl Tape</a>.
+ask <a href="https://sites.google.com/alaska.edu/carltape" target="_blank">Carl Tape</a>.
 He wrote such a nice master thesis about ray theory and how to investigate it on a spherical membrane,
 that I worked the next years on figuring out how he did all this.
 He used a grid which is based upon the two platonic solids, a
-<a class="link" href="http://en.wikipedia.org/wiki/Platonic_solid">dodecahedron and icosahedron</a>;
-a setup for which <a href="http://www.earth.ox.ac.uk/people/profiles/academic/john" target="_blank">John Woodhouse</a>
+<a class="link" href="https://en.wikipedia.org/wiki/Platonic_solid" target="_blank">dodecahedron and icosahedron</a>;
+a setup for which <a href="https://www.earth.ox.ac.uk/people/john-woodhouse" target="_blank">John Woodhouse</a>
 has the construction map and provided it for this study.
 Now we build our basic set of vertices which is then refined by subfolding spherical triangles between them
 (and the triangle corners build the centers of the pentagons and hexagons we need for the calculations).
@@ -124,7 +124,7 @@ upon their wavelengths and how many points per wavelength to put into).
 <br>
 </p>
 
-<h2 class="title"><span>uniformity</span></h2>
+<h2 class="title"><span>Uniformity</span></h2>
 <p>
 <img class="right size-60" src="./images/gridratios.jpg" alt="grid ratios">
 Very important is how <b>uniformly distributed</b> your vertices are.
@@ -136,7 +136,7 @@ The closer this ratio is to one, the better. As you can see, we are close but no
 <br>
 </p>
 
-<h2 class="title"><span>refinement</span></h2>
+<h2 class="title"><span>Refinement</span></h2>
 <p>
 That's the main problem in all these grid constructions, you just can't discretize the sphere
 in a uniform way while you only <b>subdivide triangles</b>.
@@ -153,9 +153,9 @@ in our calculation of the Laplacian. But step by step.
 </p>
 
 
-<h2 class="title"><span>spherical Laplacian</span></h2>
+<h2 class="title"><span>Spherical Laplacian</span></h2>
 <p>
-You can calculate the <a class="link" href="http://en.wikipedia.org/wiki/Laplacian">Laplacian</a>
+You can calculate the <a class="link" href="https://en.wikipedia.org/wiki/Laplace_operator" target="_blank">Laplacian</a>
 in this discretized way for the sphere. It just depends on cell areas,
 the length of cell edges and the distance between the cell centers.
 And that's the problem. Can you see these little tiny light and dark spots on the biggest sphere?
@@ -173,10 +173,10 @@ And yes, they stick together.
 <br>
 </p>
 
-<h3 class="title"><span>references:</span></h3>
+<h3 class="title"><span>References:</span></h3>
 <p>
 <b>Peter, D.</b>, C. Tape, L. Boschi and J. H. Woodhouse, 2007.
-<a href="http://www3.interscience.wiley.com/journal/118543453/abstract">
+<a href="https://www3.interscience.wiley.com/journal/118543453/abstract">
 Surface wave tomography: global membrane waves and adjoint methods
 </a>, <i>Geophys. J. Int.</i>,
 171, 1098 - 1117.
@@ -206,10 +206,10 @@ Weather Rev.</i>, <b>123</b>, 1881-1887.
 <div id="contactbar">
 <div class="box">
 <h3>further informations:</h3>
-<a href="http://kiwi.atmos.colostate.edu:80/BUGS/">Geodesic grids</a>	
+<a href="https://en.wikipedia.org/wiki/Geodesic_grid">Geodesic grids</a>	
 <br>
 <br>
-<a href="http://www.ncgia.ucsb.edu/globalgrids-book/song-kimmerling-sahr/">
+<a href="https://en.wikipedia.org/wiki/Subdivision_surface">
 Subdivision method</a> 
 <br>
 <br>
@@ -225,18 +225,18 @@ Subdivision method</a>
 <div style="clear: both;">&nbsp;</div>
 
 <footer>
-<p class="legal">&copy; March 2018</p>
-<p class="links"><a href="http://danielpeter.github.io">Daniel Peter</a></p>
+<p class="legal">&copy; September 2024</p>
+<p class="links"><a href="https://danielpeter.github.io">Daniel Peter</a></p>
 </footer> <!-- end #footer -->
 
 <!-- Start of StatCounter Code -->
 <script type="text/javascript">
 var sc_project=865844; var sc_partition=3; var sc_security="d4b9590a"; var sc_invisible=1; </script>
-<script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
 <noscript>
-<a href="http://www.statcounter.com/"
+<a href="https://www.statcounter.com/"
 target="_blank">
-<img src="http://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
+<img src="https://c4.statcounter.com/counter.php?sc_project=865844&amp;java=0&amp;security=d4b9590a&amp;invisible=1"
 alt="web site hit counter"></a>
 </noscript>
 <!-- End of StatCounter Code -->

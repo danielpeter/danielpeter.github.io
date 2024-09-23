@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Raleway|Exo+2|Lato|Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Raleway|Exo+2|Lato|Open+Sans");
 
 /* -------------------------------------------------------------
 
@@ -37,7 +37,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 html {
   /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-  font-size: 62.5%; 
+  /* font-size: 62.5%; */
   /* Keeps page centered in all browsers regardless of content height */
   overflow-y: scroll; 
   /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
@@ -50,7 +50,7 @@ html {
 body {
   /*background-color: #b7c9c6;*/
   background-color: #ffffff;
-  font-family: 'Open Sans','Raleway','Lato','Exo 2','HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue', Helvetica, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif,'Open Sans','Raleway','Lato','Exo 2','HelveticaNeue-Light','Helvetica Neue Light';
   font-weight: normal;
   margin: 0;
   padding: 0;
@@ -100,7 +100,7 @@ structure
 body {
 	background: #ffffff;
 
-	font-size: 14px;
+	/*font-size: 14px;*/
 	color: #000000;
 
   -webkit-text-size-adjust:100%;
@@ -112,8 +112,8 @@ body {
 
 h1, h2, h3 {
 	margin-bottom: 15px;
-	text-transform: lowercase;
-  font-family: 'Open Sans','Raleway', sans-serif;
+	/*text-transform: lowercase;*/
+  /*font-family: 'Open Sans','Raleway', sans-serif;*/
 	font-weight: normal;
 	color: #556499;
 }
@@ -152,7 +152,7 @@ a:hover, a:active {
 }
 
 a:visited {
-	color: #8B985F;
+	/*color: #8B985F;*/
 }
 
 img {
@@ -182,6 +182,7 @@ img.circle {
   -khtml-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+  width: 50%;
 }
 
 img.size-60 {
@@ -190,6 +191,10 @@ img.size-60 {
 
 img.size-45 {
   width: 45%;
+}
+
+img.size-30 {
+  width: 30%;
 }
 
 video {
@@ -226,7 +231,7 @@ header {
   overflow-x: hidden;
   overflow-y: auto; /* auto; */
 
-  height: 140px; /* 100vh */
+  height: 250px; /* 140px; 100vh */
   width: 100%;
 }
 
@@ -236,7 +241,7 @@ header {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 140px;
+  height: 250px; /* 140px; */
   overflow: hidden;
 }
 
@@ -272,8 +277,9 @@ header {
 }
 
 .img_background {
-  height: 150px;
-  min-width: 950px;
+  height: 280px; /* 150px;*/
+  width: 100vw;
+  /*min-width: 950px;*/
 
   background: #ffffff;
   background-position: top left;
@@ -282,19 +288,28 @@ header {
 }
 
 .img1 {
-	background-image: url(images/img01.jpg);
+	/* background-image: url(images/img01.jpg); */
+  background-image: url(images/moon_banner.mp4);
+  background-size: max(1000px,100vw);
 }
 
 .img2 {
-  background-image: url(images/img02.jpg);
+  /* background-image: url(images/img02.jpg); */
+  background-image: url(images/banner_earth1.jpg);
+  background-size: max(1070px,100vw);
 }
 
 .img3 {
-	background-image: url(images/img03.jpg);
+	/* background-image: url(images/img03.jpg); */
+  background-image: url(images/banner_mars1.jpg);
+  background-size: max(1070px,100vw);
 }
 
 .img4 {
-	background-image: url(images/img04.jpg);
+	/* background-image: url(images/img04.jpg); */
+  background-image: url(images/banner_moon1.jpg);
+  background-size: max(1070px,100vw);
+
 }
 
 
@@ -318,7 +333,7 @@ Page
 ------------------------------------------------------------- */
 section {
   display: block;
-	width: 950px;
+	width: 100%; /* 950px; */
   /* to have footer at bottom */
   min-height: -moz-calc(100% - 200px); /* Firefox */
   min-height: -webkit-calc(100% - 200px); /* Chrome, Safari */
@@ -328,21 +343,21 @@ section {
 /* left column */
 #sidebar {
 	float: left;
-	width: 180px;
+	width: 15%; /* 180px; */
 	background: white;
 }
 
 /* main middle column */
 #content {
 	float: left;
-	width: 500px;
+	width: 60%; /* 500px; */
 	background: white;
 }
 
 /* right column */
 #contactbar {
 	float: left;
-	width: 250px;
+	width: 20%; /* 250px; */
 	background: white;
   padding-left:15px;
 }
@@ -422,13 +437,15 @@ Pathline
 ------------------------------------------------------------- */
 
 .pathline {
+  position: relative;
+  top: 100px;
   width: 100%;
   line-height: 1;
 
   text-decoration: none;
   /*border-bottom: 1px solid #cccccc;*/
 
-  font-family: 'Open Sans','Raleway', sans-serif;
+  /*font-family: 'Open Sans','Raleway', sans-serif;*/
   font-size: 150%;
 
   color: #fff;
@@ -547,7 +564,7 @@ footer {
 	width: 100%;
 	min-height: 50px;
   opacity: 1;
-	background: rgba(1,6,57,0.75) no-repeat center top; /*#595C6D*/
+	background: rgba(60,60,60,0.75) no-repeat center top; /*#595C6D*/
   position: relative;
 }
 
@@ -635,8 +652,8 @@ nav {
 
   position:relative;
   width: 100%;  
-  height: 40px;
-  
+  /* height: 50px; */
+
   float: left;
   overflow: visible;  
   z-index: 10;
@@ -657,7 +674,9 @@ nav {
   background-image: linear-gradient(#fff, #ddd);
   */
   background-color: #FFF;
-  border-bottom: 1px solid #cccccc;
+  /*border-bottom: 1px solid #cccccc; */
+
+  box-shadow: 0 0 40px 0 rgba(0,0,0,0.2);
 }
 
 nav ul {
@@ -666,8 +685,7 @@ nav ul {
   width:auto;
   height:auto;      
   display:inline-block;
-  padding-left: 5px;
-  padding-right: 5px;  
+  padding: 5px;
   margin: 0;
   list-style: none;
 }
@@ -676,8 +694,8 @@ nav li {
   float: left;
   position:relative;  
   display: inline-block;
-  padding: 0;
-  margin: 10px 10px 10px 10px;
+  padding: 0px 10px;
+  margin: 10px 10px 0px 10px;
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -699,12 +717,19 @@ nav a {
   transition: all 0.25s linear;  
 }
 
+nav a:hover, a:active {
+  color: black;
+}
+
 nav li:hover {
   /* background-color: #CCC; */
+  background-color: #CCC;
+  border-radius: 5px;
+  transition:0.3s ease
 }
 
 nav li:hover > a {
-  color:#556499;
+  /* color:#556499; */
 }
 
 /* shows submenus */
@@ -723,6 +748,11 @@ nav li:hover > .arrow-down {
 
 nav span {
   vertical-align: middle;
+}
+
+nav a:link {
+  text-decoration: none;
+  color: black;
 }
 
 
@@ -756,7 +786,7 @@ ul#subnav {
 
   padding: 0;
   
-  background-color: rgba(255, 255, 255, 0.95);
+  /*background-color: rgba(255, 255, 255, 0.95);*/
 
   background-image: -webkit-linear-gradient(#fff, #ddd);
   background-image: -moz-linear-gradient(#fff, #ddd);
@@ -801,13 +831,20 @@ ul#subnav li:before {
   content: none;
 }
 
-ul#subnav a.active {
+ul#subnav a:active {
   color: #111;
 }
 
 ul#subnav li:hover > a {
   color: #333;
   box-shadow: inset 2px 0px #52A792;  
+}
+
+ul#subnav li:hover {
+  /* background-color: #CCC; */
+  background-color: #FFF;
+  border-radius: 5px;
+  transition:0.3s ease
 }
 
 ul.deepnav > li {
@@ -905,7 +942,7 @@ Special spections
 /* comment navigation box */
 span.comment {
   color: #666;
-  background-color: #DDF;
+  background-color: #DDD;
   display: block;
 }
 
@@ -944,6 +981,12 @@ Media query
   #sidebar{
     width: 0px; /* 250px; */
   }
+  #content{
+    width: 80%; /* 390px; /* 500px; */
+  }
+  #contactbar {
+    width: 20%; /* 200px; */
+  }
 }
 
 /* -- query -- landscape phone and portrait tablet (>= 592px < 752px) */
@@ -959,10 +1002,10 @@ Media query
     width: 0px; /* 180px; */
   }
   #content{
-    width: 390px; /* 500px; */
+    width: 80%; /* 390px; /* 500px; */
   }
   #contactbar {
-    width: 200px;
+    width: 20%; /* 200px; */
   }
 }
 
@@ -1061,7 +1104,7 @@ Media query
     padding-right: 0px;
     margin: 0;
 
-    background-color: rgba(255, 255, 255, 0.8);
+    /*background-color: rgba(255, 255, 255, 0.8);*/
     box-shadow: 0px 5px 5px #888888;
 
     list-style: none;
@@ -1080,11 +1123,11 @@ Media query
     padding: 10px;
     margin: 0;
 
-    background-color: rgba(220, 220, 220, 0.8);
+    /*background-color: rgba(220, 220, 220, 0.8);*/
     border-bottom: 1px solid #aaa;
   }
   nav li:hover, li:focus, li:active {
-    background-color: rgba(255, 255, 255, 0.8);
+    /*background-color: rgba(255, 255, 255, 0.8);*/
   }
   nav li:hover ul {
     display: inline-block;
