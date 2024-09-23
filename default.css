@@ -50,7 +50,6 @@ html {
 }
 
 body {
-  /*background-color: #b7c9c6;*/
   background-color: #ffffff;
   font-family: 'Helvetica Neue', Helvetica, sans-serif,'Open Sans','Raleway','Lato','Exo 2','HelveticaNeue-Light','Helvetica Neue Light';
   font-weight: normal;
@@ -724,7 +723,6 @@ nav a:hover, a:active {
 }
 
 nav li:hover {
-  /* background-color: #CCC; */
   background-color: #CCC;
   border-radius: 5px;
   transition:0.3s ease
@@ -788,7 +786,7 @@ ul#subnav {
 
   padding: 0;
   
-  /*background-color: rgba(255, 255, 255, 0.95);*/
+  background-color: rgba(255, 255, 255, 0.95);
 
   background-image: -webkit-linear-gradient(#fff, #ddd);
   background-image: -moz-linear-gradient(#fff, #ddd);
@@ -944,7 +942,7 @@ Special spections
 /* comment navigation box */
 span.comment {
   color: #666;
-  background-color: #DDD;
+  background-color: #ddd;
   display: block;
 }
 
@@ -1116,7 +1114,7 @@ Media query
     padding-right: 0px;
     margin: 0;
 
-    /*background-color: rgba(255, 255, 255, 0.8);*/
+    background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0px 5px 5px #888888;
 
     list-style: none;
@@ -1135,11 +1133,11 @@ Media query
     padding: 10px;
     margin: 0;
 
-    /*background-color: rgba(220, 220, 220, 0.8);*/
+    background-color: rgba(220, 220, 220, 0.9);
     border-bottom: 1px solid #aaa;
   }
   nav li:hover, li:focus, li:active {
-    /*background-color: rgba(255, 255, 255, 0.8);*/
+    background-color: rgba(255, 255, 255, 0.9);
   }
   nav li:hover ul {
     display: inline-block;
