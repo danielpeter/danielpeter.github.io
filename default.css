@@ -282,7 +282,7 @@ header {
   width: 100vw;
   /*min-width: 950px;*/
 
-  background: #ffffff;
+  background: #222; /* #ffffff; */
   background-position: top left;
   background-repeat: no-repeat;
   background-attachment: fixed; /* for some effect also with non-Safari */
