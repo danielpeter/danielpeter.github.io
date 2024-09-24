@@ -593,7 +593,7 @@ p.legal {
 p.links {
 	float: right;
 	margin: 0;
-  padding-right: 10px;
+  /* padding-right: 10px; */
 }
 
 .color_title {
